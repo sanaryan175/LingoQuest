@@ -1,0 +1,329 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Universal Glass Box */
+.glass-box {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(0, 77, 122, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff9500;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+  color: #ffcc80;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../assets/images/hero-bg.jpg') no-repeat center center/cover;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero .btn,
+.hero button {
+  background: #ff9500;
+  padding: 0.9rem 1.8rem;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.hero .btn:hover,
+.hero button:hover {
+  background: #e07e00;
+  transform: scale(1.05);
+}
+
+/* Cards Section */
+.courses-preview,
+.course-detail,
+.enroll-section,
+.contact-section,
+.about-section,
+.gallery-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.course-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  border-radius: 16px;
+  width: 280px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #004d7a;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #333;
+}
+
+.card a {
+  color: #004d7a;
+  text-decoration: underline;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 0.8rem;
+}
+
+/* Course Detail Page */
+.course-detail ul {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+/* Enroll / Contact / Forms */
+.enroll-form,
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+}
+
+.enroll-form input,
+.enroll-form textarea,
+.contact-form input,
+.contact-form textarea {
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Segoe UI', sans-serif;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+.enroll-form textarea,
+.contact-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.enroll-form button,
+.contact-form button {
+  background: #004d7a;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.enroll-form button:hover,
+.contact-form button:hover {
+  background: #003459;
+}
+
+#thanks-msg {
+  color: green;
+  margin-top: 1rem;
+  font-weight: bold;
+  display: none;
+}
+
+/* Contact Info */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+.contact-info h3 {
+  margin-top: 1rem;
+  color: #004d7a;
+}
+
+/* About */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+
+.about-text,
+.about-image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-text h2 {
+  color: #004d7a;
+  margin-bottom: 0.5rem;
+}
+
+.about-text p,
+.about-text ul {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.about-text ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: #004d7a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
