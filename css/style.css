@@ -211,6 +211,46 @@ body {
   display: none;
 }
 
+/* Thank You Page Styling */
+.enroll-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #ff9500 0%, #ffc107 100%);
+  color: #004d7a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.enroll-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.enroll-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.enroll-section .btn {
+  background: #004d7a;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.enroll-section .btn:hover {
+  background: #002f4a;
+  transform: scale(1.05);
+}
+
 /* Contact Info */
 .contact-container {
   display: flex;
@@ -323,6 +363,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
