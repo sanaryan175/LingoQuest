@@ -59,16 +59,18 @@
   <!-- Enroll Section -->
   <section id="enroll" class="enroll-section glass-box">
     <h2>Enroll Now</h2>
-    <form class="enroll-form" action="https://formsubmit.co/sanskritig1705@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://sanaryan175.github.io/lingo1/thankyou.html">
-      <input type="hidden" name="_captcha" value="false">
+    <form action="https://formsubmit.co/sanskritig1705@gmail.com" method="POST" class="enroll-form">
+        <!-- Hidden Fields for redirect and spam prevention -->
+        <input type="hidden" name="_next" value="https://sanaryan175.github.io/lingo1/thankyou.html">
+        <input type="hidden" name="_captcha" value="false">
 
-      <input type="text" name="name" placeholder="Your Full Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="tel" name="phone" placeholder="Mobile Number" pattern="[0-9]{10}" required>
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="position" placeholder="Position you're applying for" required>
+        <textarea name="message" rows="4" placeholder="Why should we hire you?" required></textarea>
 
-      <button type="submit" class="btn">Submit</button>
-    </form>
+        <button type="submit">Apply Now</button>
+      </form>
   </section>
 
   <!-- Footer -->
