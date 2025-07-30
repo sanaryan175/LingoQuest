@@ -1,28 +1,31 @@
 <!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LingoQuest | About</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">LingoQuest</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
+      <ul id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="courses.html">Courses</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="career.html">Career</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
+
 
   <!-- About Section -->
   <section class="about-section">
@@ -49,9 +52,9 @@
 
         <h2>Our Story</h2>
         <p>
-          This web app was built with a vision to make language learning more accessible and engaging. 
-          <strong>Sanskriti Gupta</strong> and <strong>Jainam Dudhediya</strong>, students of 
-          Second Year at Pune Institute of Technology, contributed to this project with the goal of 
+          This web app was built with a vision to make language learning more accessible and engaging.
+          <strong>Sanskriti Gupta</strong> and <strong>Jainam Dudhediya</strong>, students of
+          Second Year at Pune Institute of Technology, contributed to this project with the goal of
           helping people learn multiple languages in an easy and interactive way.
         </p>
       </div>
@@ -66,7 +69,7 @@
   <footer>
     <p>© 2025 LingoQuest. All rights reserved.</p>
   </footer>
-
+  <script src="js/script.js"></script>
 </body>
-</html>
 
+</html>
