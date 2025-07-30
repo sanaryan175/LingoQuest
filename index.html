@@ -6,14 +6,45 @@
   <title>LingoQuest | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: rgba(0, 77, 122, 0.9);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .navbar nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navbar -->
   <header class="navbar">
     <div class="logo">LingoQuest</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav>
-      <ul>
+      <ul id="navLinks">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="courses.html">Courses</a></li>
         <li><a href="about.html">About</a></li>
@@ -64,7 +95,10 @@
     <p>© 2025 LingoQuest. All rights reserved.</p>
   </footer>
 
+  <!-- Toggle Script -->
+ <script src="js/script.js"></script>
+
+
 </body>
 </html>
-
 
