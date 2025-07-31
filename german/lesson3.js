@@ -1,45 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
   const questions = [
     {
-      question: "What is 'Hello' in German?",
-      options: ["Hallo", "Tschüss", "Bitte", "Danke"],
-      answer: "Hallo",
-      explanation: "'Hallo' means Hello in German.",
+      question: "What is 'Father' in German?",
+      options: ["Mutter", "Vater", "Bruder", "Opa"],
+      answer: "Vater",
+      explanation: "'Vater' means Father.",
     },
     {
-      question: "How do you say 'Thank you'?",
-      options: ["Bitte", "Hallo", "Danke", "Nein"],
-      answer: "Danke",
-      explanation: "'Danke' means Thank you in German.",
+      question: "Translate 'Mother' into German.",
+      options: ["Tante", "Oma", "Mutter", "Schwester"],
+      answer: "Mutter",
+      explanation: "'Mutter' means Mother.",
     },
     {
-      question: "What is 'Goodbye' in German?",
-      options: ["Guten Morgen", "Tschüss", "Ja", "Willkommen"],
-      answer: "Tschüss",
-      explanation: "'Tschüss' is commonly used for Goodbye.",
+      question: "What does 'Bruder' mean?",
+      options: ["Cousin", "Sister", "Brother", "Uncle"],
+      answer: "Brother",
+      explanation: "'Bruder' means Brother.",
     },
     {
-      question: "What does 'Guten Morgen' mean?",
-      options: ["Good Night", "Good Morning", "How are you?", "Goodbye"],
-      answer: "Good Morning",
-      explanation: "'Guten Morgen' means Good Morning.",
+      question: "What is 'Sister' in German?",
+      options: ["Tochter", "Schwester", "Enkelin", "Oma"],
+      answer: "Schwester",
+      explanation: "'Schwester' means Sister.",
     },
     {
-      question: "Translate 'Yes' in German.",
-      options: ["Nein", "Ja", "Bitte", "Guten Tag"],
-      answer: "Ja",
-      explanation: "'Ja' means Yes.",
+      question: "What is 'Oma' in English?",
+      options: ["Uncle", "Grandmother", "Cousin", "Niece"],
+      answer: "Grandmother",
+      explanation: "'Oma' is a casual word for Grandmother.",
     },
     {
-      question: "How do you say 'Please'?",
-      options: ["Danke", "Willkommen", "Bitte", "Hallo"],
-      answer: "Bitte",
-      explanation: "'Bitte' means Please or You're welcome.",
+      question: "What is 'Onkel' in English?",
+      options: ["Uncle", "Aunt", "Nephew", "Brother"],
+      answer: "Uncle",
+      explanation: "'Onkel' means Uncle.",
     },
   ];
 
   let currentQuestion = 0;
-  let xp = parseInt(localStorage.getItem("xpLesson1")) || 0;
+  let xp = parseInt(localStorage.getItem("xpLesson3")) || 0;
   let lives = 3;
   let waiting = false;
 
@@ -62,25 +62,18 @@ document.addEventListener("DOMContentLoaded", function () {
     xpBar.style.width = `${percent}%`;
   }
 
-  function disableAllButtons() {
-    const buttons = document.querySelectorAll(".options button");
-    buttons.forEach(btn => btn.disabled = true);
+  function showNextButton() {
+    const nextBtn = document.createElement("button");
+    nextBtn.innerText = "Next →";
+    nextBtn.classList.add("next-btn");
+    nextBtn.onclick = () => {
+      currentQuestion++;
+      waiting = false;
+      loadQuestion();
+    };
+    feedbackElem.appendChild(document.createElement("br"));
+    feedbackElem.appendChild(nextBtn);
   }
-
- function showNextButton() {
-  if (document.querySelector(".next-btn")) return;
-  const nextBtn = document.createElement("button");
-  nextBtn.innerText = "Next →";
-  nextBtn.classList.add("next-btn");
-  nextBtn.style.marginTop = "1rem";
-  nextBtn.onclick = () => {
-    currentQuestion++;
-    waiting = false;
-    loadQuestion();
-  };
-  feedbackElem.appendChild(document.createElement("br"));
-  feedbackElem.appendChild(nextBtn);
-}
 
   function checkAnswer(selected, btn) {
     if (waiting) return;
@@ -111,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     xpElem.innerText = xp;
     livesElem.innerText = lives;
     updateXPBar();
-    localStorage.setItem("xpLesson1", xp);
+    localStorage.setItem("xpLesson3", xp);
 
     if (lives <= 0) {
       if (loseSound) loseSound.play();
@@ -152,24 +145,21 @@ document.addEventListener("DOMContentLoaded", function () {
   loadQuestion();
 });
 
-// Global control buttons
+// Controls
 function restartLesson() {
-  localStorage.removeItem("xpLesson1");
+  localStorage.removeItem("xpLesson3");
   location.reload();
 }
 
 function goToNextLesson() {
-  window.location.href = "lesson2.html";
+  window.location.href = "lesson4.html"; // optional
 }
 
 function returnToCourseList() {
-  window.location.href = "index.html";
+  window.location.href = "../index.html";
 }
 
 function restartQuiz() {
-  localStorage.removeItem("xpLesson1");
+  localStorage.removeItem("xpLesson3");
   location.reload();
 }
-
-
-

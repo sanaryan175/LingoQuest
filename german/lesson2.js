@@ -1,45 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
   const questions = [
     {
-      question: "What is 'Hello' in German?",
-      options: ["Hallo", "Tschüss", "Bitte", "Danke"],
-      answer: "Hallo",
-      explanation: "'Hallo' means Hello in German.",
+      question: "What is 'One' in German?",
+      options: ["Eins", "Zwei", "Drei", "Vier"],
+      answer: "Eins",
+      explanation: "'Eins' means One.",
     },
     {
-      question: "How do you say 'Thank you'?",
-      options: ["Bitte", "Hallo", "Danke", "Nein"],
-      answer: "Danke",
-      explanation: "'Danke' means Thank you in German.",
+      question: "What is 'Three' in German?",
+      options: ["Drei", "Zehn", "Acht", "Fünf"],
+      answer: "Drei",
+      explanation: "'Drei' means Three.",
     },
     {
-      question: "What is 'Goodbye' in German?",
-      options: ["Guten Morgen", "Tschüss", "Ja", "Willkommen"],
-      answer: "Tschüss",
-      explanation: "'Tschüss' is commonly used for Goodbye.",
+      question: "Translate 'Five' into German.",
+      options: ["Sechs", "Fünf", "Vier", "Sieben"],
+      answer: "Fünf",
+      explanation: "'Fünf' means Five.",
     },
     {
-      question: "What does 'Guten Morgen' mean?",
-      options: ["Good Night", "Good Morning", "How are you?", "Goodbye"],
-      answer: "Good Morning",
-      explanation: "'Guten Morgen' means Good Morning.",
+      question: "What is 'Zehn' in English?",
+      options: ["Six", "Nine", "Ten", "Four"],
+      answer: "Ten",
+      explanation: "'Zehn' means Ten.",
     },
     {
-      question: "Translate 'Yes' in German.",
-      options: ["Nein", "Ja", "Bitte", "Guten Tag"],
-      answer: "Ja",
-      explanation: "'Ja' means Yes.",
+      question: "What is 'Sieben'?",
+      options: ["Seven", "Six", "Eight", "Nine"],
+      answer: "Seven",
+      explanation: "'Sieben' means Seven.",
     },
     {
-      question: "How do you say 'Please'?",
-      options: ["Danke", "Willkommen", "Bitte", "Hallo"],
-      answer: "Bitte",
-      explanation: "'Bitte' means Please or You're welcome.",
+      question: "How do you say 'Two' in German?",
+      options: ["Neun", "Zwei", "Acht", "Drei"],
+      answer: "Zwei",
+      explanation: "'Zwei' means Two.",
     },
   ];
 
   let currentQuestion = 0;
-  let xp = parseInt(localStorage.getItem("xpLesson1")) || 0;
+  let xp = parseInt(localStorage.getItem("xpLesson2")) || 0;
   let lives = 3;
   let waiting = false;
 
@@ -62,25 +62,18 @@ document.addEventListener("DOMContentLoaded", function () {
     xpBar.style.width = `${percent}%`;
   }
 
-  function disableAllButtons() {
-    const buttons = document.querySelectorAll(".options button");
-    buttons.forEach(btn => btn.disabled = true);
+  function showNextButton() {
+    const nextBtn = document.createElement("button");
+    nextBtn.innerText = "Next →";
+    nextBtn.classList.add("next-btn");
+    nextBtn.onclick = () => {
+      currentQuestion++;
+      waiting = false;
+      loadQuestion();
+    };
+    feedbackElem.appendChild(document.createElement("br"));
+    feedbackElem.appendChild(nextBtn);
   }
-
- function showNextButton() {
-  if (document.querySelector(".next-btn")) return;
-  const nextBtn = document.createElement("button");
-  nextBtn.innerText = "Next →";
-  nextBtn.classList.add("next-btn");
-  nextBtn.style.marginTop = "1rem";
-  nextBtn.onclick = () => {
-    currentQuestion++;
-    waiting = false;
-    loadQuestion();
-  };
-  feedbackElem.appendChild(document.createElement("br"));
-  feedbackElem.appendChild(nextBtn);
-}
 
   function checkAnswer(selected, btn) {
     if (waiting) return;
@@ -111,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     xpElem.innerText = xp;
     livesElem.innerText = lives;
     updateXPBar();
-    localStorage.setItem("xpLesson1", xp);
+    localStorage.setItem("xpLesson2", xp);
 
     if (lives <= 0) {
       if (loseSound) loseSound.play();
@@ -152,14 +145,14 @@ document.addEventListener("DOMContentLoaded", function () {
   loadQuestion();
 });
 
-// Global control buttons
+// Global Control
 function restartLesson() {
-  localStorage.removeItem("xpLesson1");
+  localStorage.removeItem("xpLesson2");
   location.reload();
 }
 
 function goToNextLesson() {
-  window.location.href = "lesson2.html";
+  window.location.href = "lesson3.html"; // You can change this later
 }
 
 function returnToCourseList() {
@@ -167,9 +160,6 @@ function returnToCourseList() {
 }
 
 function restartQuiz() {
-  localStorage.removeItem("xpLesson1");
+  localStorage.removeItem("xpLesson2");
   location.reload();
 }
-
-
-

@@ -1,45 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
   const questions = [
     {
-      question: "What is 'Hello' in German?",
-      options: ["Hallo", "Tschüss", "Bitte", "Danke"],
-      answer: "Hallo",
-      explanation: "'Hallo' means Hello in German.",
+      question: "What is 'lesen' in English?",
+      options: ["to sing", "to dance", "to read", "to swim"],
+      answer: "to read",
+      explanation: "'lesen' means 'to read'.",
     },
     {
-      question: "How do you say 'Thank you'?",
-      options: ["Bitte", "Hallo", "Danke", "Nein"],
-      answer: "Danke",
-      explanation: "'Danke' means Thank you in German.",
+      question: "Translate 'to play football' into German.",
+      options: ["Fußball spielen", "lesen", "kochen", "tanzen"],
+      answer: "Fußball spielen",
+      explanation: "'Fußball spielen' means 'to play football'.",
     },
     {
-      question: "What is 'Goodbye' in German?",
-      options: ["Guten Morgen", "Tschüss", "Ja", "Willkommen"],
-      answer: "Tschüss",
-      explanation: "'Tschüss' is commonly used for Goodbye.",
+      question: "What does 'schwimmen' mean?",
+      options: ["to paint", "to sing", "to swim", "to draw"],
+      answer: "to swim",
+      explanation: "'schwimmen' means 'to swim'.",
     },
     {
-      question: "What does 'Guten Morgen' mean?",
-      options: ["Good Night", "Good Morning", "How are you?", "Goodbye"],
-      answer: "Good Morning",
-      explanation: "'Guten Morgen' means Good Morning.",
+      question: "What is 'to dance' in German?",
+      options: ["tanzen", "schlafen", "hören", "schreiben"],
+      answer: "tanzen",
+      explanation: "'tanzen' means 'to dance'.",
     },
     {
-      question: "Translate 'Yes' in German.",
-      options: ["Nein", "Ja", "Bitte", "Guten Tag"],
-      answer: "Ja",
-      explanation: "'Ja' means Yes.",
+      question: "Translate 'to cook' into German.",
+      options: ["kochen", "lesen", "reisen", "laufen"],
+      answer: "kochen",
+      explanation: "'kochen' means 'to cook'.",
     },
     {
-      question: "How do you say 'Please'?",
-      options: ["Danke", "Willkommen", "Bitte", "Hallo"],
-      answer: "Bitte",
-      explanation: "'Bitte' means Please or You're welcome.",
-    },
+      question: "What does 'zeichnen' mean?",
+      options: ["to draw", "to sleep", "to study", "to travel"],
+      answer: "to draw",
+      explanation: "'zeichnen' means 'to draw'.",
+    }
   ];
 
   let currentQuestion = 0;
-  let xp = parseInt(localStorage.getItem("xpLesson1")) || 0;
+  let xp = parseInt(localStorage.getItem("xpLesson4")) || 0;
   let lives = 3;
   let waiting = false;
 
@@ -62,33 +62,26 @@ document.addEventListener("DOMContentLoaded", function () {
     xpBar.style.width = `${percent}%`;
   }
 
-  function disableAllButtons() {
-    const buttons = document.querySelectorAll(".options button");
-    buttons.forEach(btn => btn.disabled = true);
+  function showNextButton() {
+    const nextBtn = document.createElement("button");
+    nextBtn.innerText = "Next →";
+    nextBtn.classList.add("next-btn");
+    nextBtn.onclick = () => {
+      currentQuestion++;
+      waiting = false;
+      loadQuestion();
+    };
+    feedbackElem.appendChild(document.createElement("br"));
+    feedbackElem.appendChild(nextBtn);
   }
-
- function showNextButton() {
-  if (document.querySelector(".next-btn")) return;
-  const nextBtn = document.createElement("button");
-  nextBtn.innerText = "Next →";
-  nextBtn.classList.add("next-btn");
-  nextBtn.style.marginTop = "1rem";
-  nextBtn.onclick = () => {
-    currentQuestion++;
-    waiting = false;
-    loadQuestion();
-  };
-  feedbackElem.appendChild(document.createElement("br"));
-  feedbackElem.appendChild(nextBtn);
-}
 
   function checkAnswer(selected, btn) {
     if (waiting) return;
     waiting = true;
 
     const current = questions[currentQuestion];
-
     const buttons = document.querySelectorAll(".options button");
+
     buttons.forEach(button => {
       button.disabled = true;
       if (button.innerText === current.answer) {
@@ -101,23 +94,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selected === current.answer) {
       xp += 10;
       feedbackElem.innerText = "✅ Correct!";
-      if (correctSound) correctSound.play();
+      correctSound && correctSound.play();
     } else {
       lives -= 1;
       feedbackElem.innerText = `❌ Wrong! ${current.explanation}`;
-      if (wrongSound) wrongSound.play();
+      wrongSound && wrongSound.play();
     }
 
     xpElem.innerText = xp;
     livesElem.innerText = lives;
     updateXPBar();
-    localStorage.setItem("xpLesson1", xp);
+    localStorage.setItem("xpLesson4", xp);
 
     if (lives <= 0) {
-      if (loseSound) loseSound.play();
-      setTimeout(() => {
-        popup.style.display = "flex";
-      }, 800);
+      loseSound && loseSound.play();
+      setTimeout(() => popup.style.display = "flex", 800);
     } else if (currentQuestion === questions.length - 1) {
       setTimeout(() => {
         document.getElementById("lesson").style.display = "none";
@@ -152,24 +143,21 @@ document.addEventListener("DOMContentLoaded", function () {
   loadQuestion();
 });
 
-// Global control buttons
+// Controls
 function restartLesson() {
-  localStorage.removeItem("xpLesson1");
+  localStorage.removeItem("xpLesson4");
   location.reload();
 }
 
 function goToNextLesson() {
-  window.location.href = "lesson2.html";
+  window.location.href = "lesson5.html"; // optional
 }
 
 function returnToCourseList() {
-  window.location.href = "index.html";
+  window.location.href = "../index.html";
 }
 
 function restartQuiz() {
-  localStorage.removeItem("xpLesson1");
+  localStorage.removeItem("xpLesson4");
   location.reload();
 }
-
-
-
