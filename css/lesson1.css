@@ -1,0 +1,74 @@
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin: auto;
+  max-width: 600px;
+}
+
+/* Harmonized Buttons */
+.options button,
+.popup-content button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff9500;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.options button:hover,
+.popup-content button:hover {
+  background: #e07e00;
+  transform: scale(1.05);
+}
+
+/* Grid Options Responsive */
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Popup Unified */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 350px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h2 {
+  color: red;
+  margin-bottom: 1rem;
+}
+.popup-content button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff9500;
+  color: white;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
