@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lesson 1 – German Greetings</title>
   <link rel="stylesheet" href="../css/lesson1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <div class="card">
     <h2>🇩🇪 Lesson 1: Greetings</h2>
+
     <div class="xp">⭐ XP: <span id="xp">0</span></div>
     <div class="lives">❤️ Lives: <span id="lives">3</span></div>
 
@@ -21,46 +24,46 @@
     <div id="result" style="display:none;">
       <h3>🎉 Great job!</h3>
       <p>Your total XP: <span id="finalXP">0</span></p>
-      <a href="index.html" style="text-decoration: none; color: #00bfa6;">← Back to Course</a>
+      <a href="../index.html">← Back to Course</a>
     </div>
 
     <div class="xpbar-container">
-  <div id="xpBar" style="height: 10px; background: #00bfa6; width: 0%; border-radius: 5px; transition: width 0.3s;"></div>
-</div>
-
+      <div id="xpBar"></div>
+    </div>
   </div>
 
-
-<!-- Victory Popup -->
-<div class="popup-content" id="successPopup">
-  <h2>🎉 Yay! You did great!</h2>
-  <p>You earned <span id="finalXP">0</span> XP!</p>
-
-  <button onclick="restartLesson()">🔁 Restart Lesson</button>
-  <button onclick="goToNextLesson()">⏭️ Next Lesson</button>
- <button onclick="returnToCourseList()">🏠 Return to Course List</button>
-
-</div>
-
-<!-- Game Over Popup -->
-<div id="gameOverPopup" class="popup">
-  <div class="popup-content">
-    <h2>💔 You Lost the Game!</h2>
-    <p>Don't worry! Try again and improve.</p>
-    <button onclick="restartQuiz()">🔁 Restart</button>
+  <!-- Victory Popup -->
+  <div class="popup" id="victoryPopup">
+    <div class="popup-content">
+      <h2>🎉 Yay! You did great!</h2>
+      <p>You earned <span id="popupFinalXP">0</span> XP!</p>
+      <div class="popup-content-buttons">
+        <button onclick="restartLesson()">🔁 Restart Lesson</button>
+        <button onclick="goToNextLesson()">⏭️ Next Lesson</button>
+        <button onclick="returnToCourseList()">🏠 Return to Course List</button>
+      </div>
+    </div>
   </div>
-</div>
 
-
-
+  <!-- Game Over Popup -->
+  <div class="popup" id="gameOverPopup">
+    <div class="popup-content">
+      <h2>💔 You Lost the Game!</h2>
+      <p>Don't worry! Try again and improve.</p>
+      <div class="popup-content-buttons">
+        <button onclick="restartQuiz()">🔁 Restart</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Sounds -->
   <audio id="correctSound" src="../assets/sound/correct.mp3" preload="auto"></audio>
   <audio id="wrongSound" src="../assets/sound/wrong.mp3" preload="auto"></audio>
   <audio id="loseSound" src="../assets/sound/lose.mp3" preload="auto"></audio>
 
-  <!-- JavaScript -->
   <script src="lesson1.js"></script>
 </body>
 </html>
+
+
 

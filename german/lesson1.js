@@ -58,13 +58,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const loseSound = document.getElementById("loseSound");
 
   function updateXPBar() {
-    const percent = (xp / (questions.length * 10)) * 100;
+    const percent = Math.min((xp / (questions.length * 10)) * 100, 100);
     xpBar.style.width = `${percent}%`;
+  }
+
+  function disableAllButtons() {
+    const buttons = document.querySelectorAll(".options button");
+    buttons.forEach(btn => btn.disabled = true);
   }
 
   function showNextButton() {
     const nextBtn = document.createElement("button");
     nextBtn.innerText = "Next →";
+    nextBtn.classList.add("next-btn");
     nextBtn.style.marginTop = "1rem";
     nextBtn.onclick = () => {
       currentQuestion++;
@@ -75,11 +81,21 @@ document.addEventListener("DOMContentLoaded", function () {
     feedbackElem.appendChild(nextBtn);
   }
 
-  function checkAnswer(selected) {
+  function checkAnswer(selected, btn) {
     if (waiting) return;
+    waiting = true;
 
     const current = questions[currentQuestion];
-    waiting = true;
+
+    const buttons = document.querySelectorAll(".options button");
+    buttons.forEach(button => {
+      button.disabled = true;
+      if (button.innerText === current.answer) {
+        button.classList.add("correct");
+      } else if (button === btn) {
+        button.classList.add("wrong");
+      }
+    });
 
     if (selected === current.answer) {
       xp += 10;
@@ -102,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
         popup.style.display = "flex";
       }, 800);
     } else if (currentQuestion === questions.length - 1) {
-      // All questions completed
       setTimeout(() => {
         document.getElementById("lesson").style.display = "none";
         popupFinalXP.innerText = xp;
@@ -124,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     current.options.forEach((opt) => {
       const btn = document.createElement("button");
       btn.innerText = opt;
-      btn.onclick = () => checkAnswer(opt);
+      btn.onclick = () => checkAnswer(opt, btn);
       optionsElem.appendChild(btn);
     });
 
@@ -136,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loadQuestion();
 });
 
-// Buttons
+// Global control buttons
 function restartLesson() {
   localStorage.removeItem("xpLesson1");
   location.reload();
@@ -149,5 +164,11 @@ function goToNextLesson() {
 function returnToCourseList() {
   window.location.href = "index.html";
 }
+
+function restartQuiz() {
+  localStorage.removeItem("xpLesson1");
+  location.reload();
+}
+
 
 

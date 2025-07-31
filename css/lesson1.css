@@ -1,74 +1,196 @@
-.card {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  margin: auto;
-  max-width: 600px;
+/* === Global === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff8f0, #e3f2fd, #fef6ff, #f0f8ff);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #222;
 }
 
-/* Harmonized Buttons */
+/* === Gradient Animation === */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Lesson Card === */
+.card {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 720px;
+  color: #004d7a;
+  animation: fadeInUp 0.6s ease;
+}
+
+/* === XP & Lives === */
+.xp, .lives {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+/* === XP Bar === */
+.xpbar-container {
+  margin-top: 1rem;
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#xpBar {
+  height: 100%;
+  background: #00c896;
+  width: 0%;
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+
+/* === Question === */
+.question {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* === Answer Options === */
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 .options button,
 .popup-content button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #ff9500;
   color: white;
   cursor: pointer;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .options button:hover,
 .popup-content button:hover {
-  background: #e07e00;
+  background: #e67e00;
   transform: scale(1.05);
 }
 
-/* Grid Options Responsive */
-.options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+.options button:active {
+  transform: scale(0.97);
+  background: #cc6e00;
 }
 
-/* Popup Unified */
+/* === Option Feedback === */
+.options button.correct {
+  background-color: #00c896 !important;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 200, 150, 0.5);
+}
+
+.options button.wrong {
+  background-color: #e74c3c !important;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(231, 76, 60, 0.5);
+}
+
+/* === Feedback Text === */
+.feedback {
+  font-size: 1.1rem;
+  font-weight: 500;
+  min-height: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+/* === Popups === */
 .popup {
   display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.65);
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 10000;
 }
 
+/* === Popup Content === */
 .popup-content {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
   padding: 2rem;
-  border-radius: 12px;
   text-align: center;
-  max-width: 350px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+  animation: pop 0.4s ease-in-out;
 }
 
 .popup-content h2 {
-  color: red;
+  color: #004d7a;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-.popup-content button {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  background: #ff9500;
-  color: white;
-  font-weight: bold;
-  margin-top: 0.5rem;
+
+.popup-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #222;
 }
+
+/* Buttons inside Popup */
+.popup-content-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.popup-content-buttons button {
+  flex: 1 1 120px;
+  margin: 0;
+}
+
+/* === Result Link === */
+#result a {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #004d7a;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#result a:hover {
+  color: #002f4d;
+}
+
+/* === Animations === */
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
