@@ -1,45 +1,69 @@
 document.addEventListener("DOMContentLoaded", function () {
   const questions = [
     {
-      question: "What is 'Hello' in German?",
-      options: ["Hallo", "Tschüss", "Bitte", "Danke"],
-      answer: "Hallo",
-      explanation: "'Hallo' means Hello in German.",
+      question: "What is 'North' in German?",
+      options: ["Norden", "Süden", "Osten", "Westen"],
+      answer: "Norden",
+      explanation: "'Norden' means North.",
     },
     {
-      question: "How do you say 'Thank you'?",
-      options: ["Bitte", "Hallo", "Danke", "Nein"],
-      answer: "Danke",
-      explanation: "'Danke' means Thank you in German.",
+      question: "Translate 'South' into German.",
+      options: ["Osten", "Westen", "Süden", "Morgen"],
+      answer: "Süden",
+      explanation: "'Süden' means South.",
     },
     {
-      question: "What is 'Goodbye' in German?",
-      options: ["Guten Morgen", "Tschüss", "Ja", "Willkommen"],
-      answer: "Tschüss",
-      explanation: "'Tschüss' is commonly used for Goodbye.",
+      question: "How do you say 'East' in German?",
+      options: ["Osten", "Norden", "Mittag", "Westen"],
+      answer: "Osten",
+      explanation: "'Osten' means East.",
     },
     {
-      question: "What does 'Guten Morgen' mean?",
-      options: ["Good Night", "Good Morning", "How are you?", "Goodbye"],
-      answer: "Good Morning",
-      explanation: "'Guten Morgen' means Good Morning.",
+      question: "Translate 'West' into German.",
+      options: ["Westen", "Osten", "Süden", "Nacht"],
+      answer: "Westen",
+      explanation: "'Westen' means West.",
     },
     {
-      question: "Translate 'Yes' in German.",
-      options: ["Nein", "Ja", "Bitte", "Guten Tag"],
-      answer: "Ja",
-      explanation: "'Ja' means Yes.",
+      question: "What is the German word for 'Morning'?",
+      options: ["Abend", "Mittag", "Morgen", "Nacht"],
+      answer: "Morgen",
+      explanation: "'Morgen' means Morning.",
     },
     {
-      question: "How do you say 'Please'?",
-      options: ["Danke", "Willkommen", "Bitte", "Hallo"],
-      answer: "Bitte",
-      explanation: "'Bitte' means Please or You're welcome.",
+      question: "What does 'Abend' mean?",
+      options: ["Afternoon", "Evening", "Morning", "Night"],
+      answer: "Evening",
+      explanation: "'Abend' means Evening.",
     },
+    {
+      question: "What is 'Night' in German?",
+      options: ["Morgen", "Mittag", "Nacht", "Abend"],
+      answer: "Nacht",
+      explanation: "'Nacht' means Night.",
+    },
+    {
+      question: "How do you say 'Afternoon' in German?",
+      options: ["Nachmittag", "Morgen", "Nacht", "Mittag"],
+      answer: "Nachmittag",
+      explanation: "'Nachmittag' means Afternoon.",
+    },
+    {
+      question: "What does 'Mittag' mean?",
+      options: ["Midnight", "Midday/Noon", "Evening", "Morning"],
+      answer: "Midday/Noon",
+      explanation: "'Mittag' means Midday or Noon.",
+    },
+    {
+      question: "Which of the following means 'Direction' in German?",
+      options: ["Richtung", "Phase", "Weg", "Stadt"],
+      answer: "Richtung",
+      explanation: "'Richtung' means Direction.",
+    }
   ];
 
   let currentQuestion = 0;
-  let xp = parseInt(localStorage.getItem("xpLesson1")) || 0;
+  let xp = parseInt(localStorage.getItem("xpLesson9")) || 0;
   let lives = 3;
   let waiting = false;
 
@@ -67,20 +91,20 @@ document.addEventListener("DOMContentLoaded", function () {
     buttons.forEach(btn => btn.disabled = true);
   }
 
- function showNextButton() {
-  if (document.querySelector(".next-btn")) return;
-  const nextBtn = document.createElement("button");
-  nextBtn.innerText = "Next →";
-  nextBtn.classList.add("next-btn");
-  nextBtn.style.marginTop = "1rem";
-  nextBtn.onclick = () => {
-    currentQuestion++;
-    waiting = false;
-    loadQuestion();
-  };
-  feedbackElem.appendChild(document.createElement("br"));
-  feedbackElem.appendChild(nextBtn);
-}
+  function showNextButton() {
+    if (document.querySelector(".next-btn")) return;
+    const nextBtn = document.createElement("button");
+    nextBtn.innerText = "Next →";
+    nextBtn.classList.add("next-btn");
+    nextBtn.style.marginTop = "1rem";
+    nextBtn.onclick = () => {
+      currentQuestion++;
+      waiting = false;
+      loadQuestion();
+    };
+    feedbackElem.appendChild(document.createElement("br"));
+    feedbackElem.appendChild(nextBtn);
+  }
 
   function checkAnswer(selected, btn) {
     if (waiting) return;
@@ -111,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
     xpElem.innerText = xp;
     livesElem.innerText = lives;
     updateXPBar();
-    localStorage.setItem("xpLesson1", xp);
+    localStorage.setItem("xpLesson9", xp);
 
     if (lives <= 0) {
       if (loseSound) loseSound.play();
@@ -154,12 +178,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Global control buttons
 function restartLesson() {
-  localStorage.removeItem("xpLesson1");
+  localStorage.removeItem("xpLesson9");
   location.reload();
 }
 
 function goToNextLesson() {
-  window.location.href = "lesson2.html";
+  window.location.href = "lesson10.html";
 }
 
 function returnToCourseList() {
@@ -167,10 +191,6 @@ function returnToCourseList() {
 }
 
 function restartQuiz() {
-  localStorage.removeItem("xpLesson1");
+  localStorage.removeItem("xpLesson9");
   location.reload();
 }
-
-
-
-
