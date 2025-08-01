@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 6 – Grammar Basics | LingoQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: rgba(0, 77, 122, 0.9);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .navbar nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">LingoQuest</div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav>
+    <ul id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../career.html">Career</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Lesson 6: Grammar Basics in German</h1>
+  <p>Build strong foundations in German sentence structure, verbs, pronouns, and more!</p>
+</section>
+
+<!-- Lesson Article Content -->
+<section class="lesson-article">
+  <div class="content-wrapper">
+
+    <div class="learn-box">
+      <h2 class="section-heading">👤 Personal Pronouns</h2>
+      <p>These are used to talk about yourself or others:</p>
+      <ul>
+        <li><strong>ich</strong> – I</li>
+        <li><strong>du</strong> – you (informal)</li>
+        <li><strong>er / sie / es</strong> – he / she / it</li>
+        <li><strong>wir</strong> – we</li>
+        <li><strong>ihr</strong> – you all</li>
+        <li><strong>sie</strong> – they</li>
+        <li><strong>Sie</strong> – you (formal)</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🧱 Basic Sentence Structure</h2>
+      <p>German sentences usually follow: <strong>Subject – Verb – Object</strong></p>
+      <ul>
+        <li><strong>Ich liebe Deutsch.</strong> – I love German.</li>
+        <li><strong>Wir lernen zusammen.</strong> – We are learning together.</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🔄 Verb Conjugation (Present Tense)</h2>
+      <p>Take the verb <strong>spielen</strong> (to play):</p>
+      <ul>
+        <li>ich <strong>spiele</strong></li>
+        <li>du <strong>spielst</strong></li>
+        <li>er/sie/es <strong>spielt</strong></li>
+        <li>wir <strong>spielen</strong></li>
+        <li>ihr <strong>spielt</strong></li>
+        <li>sie/Sie <strong>spielen</strong></li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">📚 Articles & Gender</h2>
+      <p>German nouns have genders. Use correct articles:</p>
+      <ul>
+        <li><strong>der</strong> – masculine</li>
+        <li><strong>die</strong> – feminine</li>
+        <li><strong>das</strong> – neuter</li>
+      </ul>
+      <p><strong>Examples:</strong> der Tisch (table), die Lampe (lamp), das Buch (book)</p>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🧮 Plural Forms</h2>
+      <p>German plurals can be tricky, but here are some examples:</p>
+      <ul>
+        <li><strong>der Stuhl</strong> → <strong>die Stühle</strong> (chair → chairs)</li>
+        <li><strong>die Katze</strong> → <strong>die Katzen</strong> (cat → cats)</li>
+        <li><strong>das Auto</strong> → <strong>die Autos</strong> (car → cars)</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">❓ W-Questions</h2>
+      <p>Use these to ask questions:</p>
+      <ul>
+        <li><strong>Was</strong> – What</li>
+        <li><strong>Wer</strong> – Who</li>
+        <li><strong>Wo</strong> – Where</li>
+        <li><strong>Wann</strong> – When</li>
+        <li><strong>Wie</strong> – How</li>
+        <li><strong>Warum</strong> – Why</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">💬 “Haben” and “Sein”</h2>
+      <p>Two important irregular verbs:</p>
+      <p><strong>haben</strong> – to have:</p>
+      <ul>
+        <li>ich <strong>habe</strong></li>
+        <li>du <strong>hast</strong></li>
+        <li>er/sie/es <strong>hat</strong></li>
+      </ul>
+      <p><strong>sein</strong> – to be:</p>
+      <ul>
+        <li>ich <strong>bin</strong></li>
+        <li>du <strong>bist</strong></li>
+        <li>er/sie/es <strong>ist</strong></li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">📘 Example Sentences</h2>
+      <ul>
+        <li><strong>Ich bin Student.</strong> – I am a student.</li>
+        <li><strong>Wir haben einen Hund.</strong> – We have a dog.</li>
+        <li><strong>Was machst du?</strong> – What are you doing?</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">💡 Did You Know?</h2>
+      <ul>
+        <li>All **plural nouns** use <strong>die</strong>, regardless of gender.</li>
+        <li>The verb always comes second in German statements – even if the sentence starts with a time phrase!</li>
+        <li>In formal settings, always use <strong>Sie</strong> with capital S for “you”.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Bottom Navigation Buttons (above footer) -->
+<div class="bottom-nav-buttons">
+  <a href="../german/index.html" class="btn nav-btn">← Back to Course List</a>
+  <a href="lesson6.html" class="btn nav-btn">Attempt Quiz →</a>
+</div>
+
+<style>
+  .bottom-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem auto 2rem;
+    padding: 1rem 2rem;
+    max-width: 900px;
+    flex-wrap: wrap;
+  }
+
+  .bottom-nav-buttons .nav-btn {
+    flex: 1;
+    text-align: center;
+    background-color: #004d7a;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+  }
+
+  .bottom-nav-buttons .nav-btn:hover {
+    background-color: #ff9500;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .bottom-nav-buttons {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  }
+</style>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 LingoQuest. All rights reserved.</p>
+</footer>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 2 – Numbers | LingoQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: rgba(0, 77, 122, 0.9);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .navbar nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">LingoQuest</div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav>
+    <ul id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../career.html">Career</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Lesson 2: Numbers in German</h1>
+  <p>Learn how to count, use, and recognize numbers in real-life German communication.</p>
+</section>
+
+<!-- Lesson Article Content -->
+<section class="lesson-article">
+  <div class="content-wrapper">
+
+    <div class="learn-box">
+      <h2 class="section-heading">🔢 Numbers from 0 to 25</h2>
+      <ul>
+        <li><strong>0</strong> – Null</li>
+        <li><strong>1</strong> – Eins</li>
+        <li><strong>2</strong> – Zwei</li>
+        <li><strong>3</strong> – Drei</li>
+        <li><strong>4</strong> – Vier</li>
+        <li><strong>5</strong> – Fünf</li>
+        <li><strong>6</strong> – Sechs</li>
+        <li><strong>7</strong> – Sieben</li>
+        <li><strong>8</strong> – Acht</li>
+        <li><strong>9</strong> – Neun</li>
+        <li><strong>10</strong> – Zehn</li>
+        <li><strong>11</strong> – Elf</li>
+        <li><strong>12</strong> – Zwölf</li>
+        <li><strong>13</strong> – Dreizehn</li>
+        <li><strong>14</strong> – Vierzehn</li>
+        <li><strong>15</strong> – Fünfzehn</li>
+        <li><strong>16</strong> – Sechzehn</li>
+        <li><strong>17</strong> – Siebzehn</li>
+        <li><strong>18</strong> – Achtzehn</li>
+        <li><strong>19</strong> – Neunzehn</li>
+        <li><strong>20</strong> – Zwanzig</li>
+        <li><strong>21</strong> – Einundzwanzig</li>
+        <li><strong>22</strong> – Zweiundzwanzig</li>
+        <li><strong>23</strong> – Dreiundzwanzig</li>
+        <li><strong>24</strong> – Vierundzwanzig</li>
+        <li><strong>25</strong> – Fünfundzwanzig</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🎯 Milestone Numbers</h2>
+      <ul>
+        <li><strong>30</strong> – Dreißig</li>
+        <li><strong>40</strong> – Vierzig</li>
+        <li><strong>50</strong> – Fünfzig</li>
+        <li><strong>100</strong> – Hundert</li>
+        <li><strong>1000</strong> – Tausend</li>
+        <li><strong>10,000</strong> – Zehntausend</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">💡 Grammar & Number Patterns</h2>
+      <ul>
+        <li>From 21 onward, German reverses the order: <strong>Einundzwanzig</strong> = 21 ("One and twenty").</li>
+        <li>“Eins” becomes “ein” in compound numbers (e.g., einunddreißig = 31).</li>
+        <li>All numbers are written as one word without spaces.</li>
+        <li>After 100, just add the rest: <strong>Hundertfünf</strong> = 105, <strong>Tausenddreißig</strong> = 1030.</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">📘 Usage in Context</h2>
+      <p><strong>Ich bin fünfzehn Jahre alt.</strong> – I am 15 years old.</p>
+      <p><strong>Das kostet dreißig Euro.</strong> – That costs 30 euros.</p>
+      <p><strong>Mein Haus hat hundert Fenster.</strong> – My house has 100 windows.</p>
+      <p><strong>Sie wohnt in Zimmer zweiundzwanzig.</strong> – She lives in room 22.</p>
+      <p><strong>Er hat über zehntausend Abonnenten.</strong> – He has over 10,000 subscribers.</p>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🧠 Fun Facts</h2>
+      <ul>
+        <li>Germans often say numbers in reverse: 23 = “dreiundzwanzig” = three and twenty.</li>
+        <li>Decimal numbers use a comma instead of a dot: 3,5 (not 3.5).</li>
+        <li>Telephone numbers are often read in small groups for clarity: z.B. 0176 – 24 – 55 – 321</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Bottom Navigation Buttons (above footer) -->
+<div class="bottom-nav-buttons">
+  <a href="../german/index.html" class="btn nav-btn">← Back to Course List</a>
+  <a href="lesson2.html" class="btn nav-btn">Attempt Quiz →</a>
+</div>
+
+<style>
+  .bottom-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem auto 2rem;
+    padding: 1rem 2rem;
+    max-width: 900px;
+    flex-wrap: wrap;
+  }
+
+  .bottom-nav-buttons .nav-btn {
+    flex: 1;
+    text-align: center;
+    background-color: #004d7a;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+  }
+
+  .bottom-nav-buttons .nav-btn:hover {
+    background-color: #ff9500;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .bottom-nav-buttons {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  }
+</style>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 LingoQuest. All rights reserved.</p>
+</footer>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>
+

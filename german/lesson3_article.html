@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 3 – Family | LingoQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: rgba(0, 77, 122, 0.9);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .navbar nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">LingoQuest</div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav>
+    <ul id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../career.html">Career</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Lesson 3: Family in German</h1>
+  <p>Learn how to talk about your family and loved ones in German.</p>
+</section>
+
+<!-- Lesson Article Content -->
+<section class="lesson-article">
+  <div class="content-wrapper">
+
+    <div class="learn-box">
+      <h2 class="section-heading">👨‍👩‍👧‍👦 Key Family Vocabulary</h2>
+      <ul class="number-grid">
+        <li><strong>Die Familie</strong> – Family</li>
+        <li><strong>Der Vater</strong> – Father</li>
+        <li><strong>Die Mutter</strong> – Mother</li>
+        <li><strong>Der Bruder</strong> – Brother</li>
+        <li><strong>Die Schwester</strong> – Sister</li>
+        <li><strong>Die Eltern</strong> – Parents</li>
+        <li><strong>Der Sohn</strong> – Son</li>
+        <li><strong>Die Tochter</strong> – Daughter</li>
+        <li><strong>Die Großeltern</strong> – Grandparents</li>
+        <li><strong>Der Großvater (Opa)</strong> – Grandfather</li>
+        <li><strong>Die Großmutter (Oma)</strong> – Grandmother</li>
+        <li><strong>Der Onkel</strong> – Uncle</li>
+        <li><strong>Die Tante</strong> – Aunt</li>
+        <li><strong>Der Cousin</strong> – Male cousin</li>
+        <li><strong>Die Cousine</strong> – Female cousin</li>
+        <li><strong>Das Kind</strong> – Child</li>
+        <li><strong>Die Kinder</strong> – Children</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">📚 Grammar Tips</h2>
+      <ul>
+        <li><strong>Gender & Articles:</strong> Masculine → <em>der</em>, Feminine → <em>die</em>, Neutral → <em>das</em>.</li>
+        <li><strong>Plural form:</strong> Die Mutter → <em>Die Mütter</em>, Der Vater → <em>Die Väter</em>.</li>
+        <li><strong>Possessive Pronouns:</strong> "Mein Vater" (my father), "Meine Mutter" (my mother). Gender affects the pronoun ending.</li>
+        <li><strong>Verb Agreement:</strong> “Meine Eltern <strong>sind</strong> nett” (My parents are nice).</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">💬 Usage in Context</h2>
+      <p><strong>Ich habe einen Bruder und eine Schwester.</strong> – I have a brother and a sister.</p>
+      <p><strong>Mein Vater ist Arzt.</strong> – My father is a doctor.</p>
+      <p><strong>Meine Großeltern wohnen in Berlin.</strong> – My grandparents live in Berlin.</p>
+      <p><strong>Wie heißt deine Mutter?</strong> – What is your mother’s name?</p>
+      <p><strong>Meine Familie ist sehr groß.</strong> – My family is very big.</p>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🧠 Fun Facts</h2>
+      <ul>
+        <li>In German culture, family titles are often used with respect — e.g., "Mutti" for mom or "Vati" for dad affectionately.</li>
+        <li>Plural endings change depending on gender and root word — e.g., Bruder → Brüder, Schwester → Schwestern.</li>
+        <li>The word <strong>Familie</strong> is feminine, so we say <strong>die Familie</strong>.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Bottom Navigation Buttons -->
+<div class="bottom-nav-buttons">
+  <a href="../german/index.html" class="btn nav-btn">← Back to Course List</a>
+  <a href="lesson3.html" class="btn nav-btn">Attempt Quiz →</a>
+</div>
+
+<style>
+  .number-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+
+  .bottom-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem auto 2rem;
+    padding: 1rem 2rem;
+    max-width: 900px;
+    flex-wrap: wrap;
+  }
+
+  .bottom-nav-buttons .nav-btn {
+    flex: 1;
+    text-align: center;
+    background-color: #004d7a;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+  }
+
+  .bottom-nav-buttons .nav-btn:hover {
+    background-color: #ff9500;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .bottom-nav-buttons {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  }
+</style>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 LingoQuest. All rights reserved.</p>
+</footer>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>
