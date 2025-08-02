@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lesson 3 – Family Members</title>
-  <link rel="stylesheet" href="../css/lesson1.css">
+  <link rel="stylesheet" href="lesson1.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,24 +21,38 @@
       <div class="feedback" id="feedback"></div>
     </div>
 
-    <div id="result" style="display:none;">
-      <h3>🎉 Great job!</h3>
-      <p>Your total XP: <span id="finalXP">0</span></p>
-      <a href="../index.html">← Back to Course</a>
-    </div>
-
     <div class="xpbar-container">
       <div id="xpBar"></div>
+    </div>
+
+    <!-- ✅ Buttons row - fixed -->
+    <div class="buttons-row">
+      <button id="skipBtn">⏭ Skip</button>
+
+      <div class="right-buttons">
+        <button id="checkBtn">✔ Check</button>
+        <button id="continueBtn" style="display:none;">➡ Continue</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Already Passed Popup -->
+  <div class="popup" id="passedPopup">
+    <div class="popup-content">
+      <h2>🎉 You already passed this lesson!</h2>
+      <p>Want to restart?</p>
+      <button onclick="restartLesson()">🔁 Restart</button>
     </div>
   </div>
 
   <!-- Victory Popup -->
   <div class="popup" id="victoryPopup">
     <div class="popup-content">
-      <h2>🎉 Well done!</h2>
+      <h2>🎉 Yay! You did great!</h2>
       <p>You earned <span id="popupFinalXP">0</span> XP!</p>
       <div class="popup-content-buttons">
-        <button onclick="restartLesson()">🔁 Restart Lesson</button>
+        <button onclick="restartLesson()">🔁 Restart Quiz</button>
         <button onclick="goToNextLesson()">⏭️ Next Lesson</button>
         <button onclick="returnToCourseList()">🏠 Return to Course List</button>
       </div>
@@ -49,7 +63,7 @@
   <div class="popup" id="gameOverPopup">
     <div class="popup-content">
       <h2>💔 You Lost the Game!</h2>
-      <p>Try again to improve your score.</p>
+      <p>Don't worry! Try again and improve.</p>
       <div class="popup-content-buttons">
         <button onclick="restartQuiz()">🔁 Restart</button>
       </div>
@@ -63,4 +77,5 @@
 
   <script src="lesson3.js"></script>
 </body>
+
 </html>
