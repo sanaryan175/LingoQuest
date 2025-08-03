@@ -37,38 +37,43 @@ document.addEventListener("DOMContentLoaded", function () {
       explanation: "'Onkel' means Uncle.",
     },
   ];
-  let xp = parseInt(localStorage.getItem("xpLesson1")) || 0;
-  let currentQuestion = parseInt(localStorage.getItem("currentQuestionLesson1")) || 0;
-  let lives = parseInt(localStorage.getItem("livesLesson1")) || 3;
-  let waiting = false;
-  let selectedOption = null;
-  let selectedBtn = null;
+ 
+  let xp = parseInt(localStorage.getItem(`xp_lesson3`)) || 0;
+  let currentQuestion = parseInt(localStorage.getItem(`currentQuestion_lesson3`)) || 0;
+  let lives = parseInt(localStorage.getItem(`lives_lesson3`)) || 3;
+  let quizPassed = localStorage.getItem(`quizPassed_lesson3`) === "true";
 
-  const skipPenalty = false; // Change to true if skip should cost a life
-
-  // DOM elements
   const questionElem = document.getElementById("question");
   const optionsElem = document.getElementById("options");
   const xpElem = document.getElementById("xp");
   const livesElem = document.getElementById("lives");
   const feedbackElem = document.getElementById("feedback");
+  const xpBar = document.getElementById("xpBar");
 
+  const gameContainer = document.getElementById("gameContainer");
   const gameOverPopup = document.getElementById("gameOverPopup");
   const victoryPopup = document.getElementById("victoryPopup");
   const passedPopup = document.getElementById("passedPopup");
   const popupFinalXP = document.getElementById("popupFinalXP");
-  const xpBar = document.getElementById("xpBar");
 
   const correctSound = document.getElementById("correctSound");
   const wrongSound = document.getElementById("wrongSound");
   const loseSound = document.getElementById("loseSound");
+  const victorySound = document.getElementById("victorySound");
 
   const skipBtn = document.getElementById("skipBtn");
   const checkBtn = document.getElementById("checkBtn");
   const continueBtn = document.getElementById("continueBtn");
 
-  // Already completed check
-  if (xp >= questions.length * 10 && currentQuestion >= questions.length) {
+  const svgContainer = document.getElementById("svgReactionContainer");
+
+  let waiting = false;
+  let selectedOption = null;
+  let selectedBtn = null;
+  const skipPenalty = false;
+
+  if (quizPassed) {
+    gameContainer.style.display = "none";
     passedPopup.style.display = "flex";
     return;
   }
@@ -97,9 +102,39 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function saveProgress() {
-    localStorage.setItem("xpLesson1", xp);
-    localStorage.setItem("currentQuestionLesson1", currentQuestion);
-    localStorage.setItem("livesLesson1", lives);
+    localStorage.setItem(`xp_lesson3`, xp);
+    localStorage.setItem(`currentQuestion_lesson3`, currentQuestion);
+    localStorage.setItem(`lives_lesson3`, lives);
+  }
+
+  function showSVGReaction(type) {
+    if (!svgContainer) return;
+    let svg = "";
+
+    if (type === "wrong") {
+      svg = `<svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="#ff4d4f" stroke-width="5" fill="none"/>
+        <line x1="35" y1="35" x2="65" y2="65" stroke="#ff4d4f" stroke-width="5"/>
+        <line x1="65" y1="35" x2="35" y2="65" stroke="#ff4d4f" stroke-width="5"/>
+      </svg>`;
+    } else if (type === "victory") {
+      svg = `<svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="#00c853" stroke-width="5" fill="none"/>
+        <polyline points="30,55 45,70 70,35" fill="none" stroke="#00c853" stroke-width="5"/>
+      </svg>`;
+    } else if (type === "gameover") {
+      svg = `<svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="#ff1744" stroke-width="5" fill="none"/>
+        <path d="M35,40 Q50,60 65,40" fill="none" stroke="#ff1744" stroke-width="5"/>
+      </svg>`;
+    }
+
+    svgContainer.innerHTML = svg;
+    svgContainer.classList.add("show");
+    setTimeout(() => {
+      svgContainer.classList.remove("show");
+      svgContainer.innerHTML = "";
+    }, 1200);
   }
 
   function checkAnswer(selected, btn) {
@@ -122,11 +157,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selected === current.answer) {
       xp += 10;
       feedbackElem.innerText = "✅ Correct!";
-      if (correctSound) { correctSound.currentTime = 0; correctSound.play(); }
+      btn.classList.add("bounce");
+      correctSound?.cloneNode(true).play();
     } else {
       lives -= 1;
       feedbackElem.innerText = `❌ Wrong! ${current.explanation}`;
-      if (wrongSound) { wrongSound.currentTime = 0; wrongSound.play(); }
+      wrongSound?.cloneNode(true).play();
+      showSVGReaction("wrong");
     }
 
     xpElem.innerText = xp;
@@ -136,13 +173,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (lives <= 0) {
       hideControlButtons();
-      if (loseSound) { loseSound.currentTime = 0; loseSound.play(); }
+      loseSound?.cloneNode(true).play();
+      showSVGReaction("gameover");
       setTimeout(() => gameOverPopup.style.display = "flex", 800);
     } else if (currentQuestion === questions.length - 1) {
       hideControlButtons();
+      localStorage.setItem(`quizPassed_lesson3`, "true");
       setTimeout(() => {
         popupFinalXP.innerText = xp;
         victoryPopup.style.display = "flex";
+        confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
+        victorySound?.cloneNode(true).play();
+        showSVGReaction("victory");
       }, 800);
     } else {
       showContinueButton();
@@ -161,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     optionsElem.innerHTML = "";
     feedbackElem.innerText = "";
 
-    current.options.forEach((opt) => {
+    current.options.forEach(opt => {
       const btn = document.createElement("button");
       btn.innerText = opt;
       btn.classList.remove("selected", "correct", "wrong");
@@ -181,27 +223,33 @@ document.addEventListener("DOMContentLoaded", function () {
     saveProgress();
   }
 
-  skipBtn.addEventListener("click", function () {
+  skipBtn.addEventListener("click", () => {
     if (skipPenalty) {
       lives -= 1;
       if (lives <= 0) {
         saveProgress();
         hideControlButtons();
-        if (loseSound) { loseSound.currentTime = 0; loseSound.play(); }
+        loseSound?.cloneNode(true).play();
+        showSVGReaction("gameover");
         return setTimeout(() => gameOverPopup.style.display = "flex", 800);
       }
     }
+
     currentQuestion++;
     if (currentQuestion >= questions.length) {
       hideControlButtons();
+      localStorage.setItem(`quizPassed_lesson3`, "true");
       popupFinalXP.innerText = xp;
       victoryPopup.style.display = "flex";
+      confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
+      victorySound?.cloneNode(true).play();
+      showSVGReaction("victory");
     } else {
       loadQuestion();
     }
   });
 
-  checkBtn.addEventListener("click", function () {
+  checkBtn.addEventListener("click", () => {
     if (!selectedOption) {
       alert("Please select an option first!");
       return;
@@ -209,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
     checkAnswer(selectedOption, selectedBtn);
   });
 
-  continueBtn.addEventListener("click", function () {
+  continueBtn.addEventListener("click", () => {
     currentQuestion++;
     loadQuestion();
   });
@@ -217,22 +265,24 @@ document.addEventListener("DOMContentLoaded", function () {
   loadQuestion();
 });
 
-// Global controls
+// 🔄 Global Controls
 function restartLesson() {
-  localStorage.removeItem("xpLesson1");
-  localStorage.removeItem("currentQuestionLesson1");
-  localStorage.removeItem("livesLesson1");
+  const lessonId = "lessonX"; // Match this to the current lesson
+  localStorage.removeItem(`xp_lesson3`);
+  localStorage.removeItem(`currentQuestion_lesson3`);
+  localStorage.removeItem(`lives_lesson3`);
+  localStorage.removeItem(`quizPassed_lesson3`);
   location.reload();
 }
+
 function goToNextLesson() {
-  window.location.href = "lesson4_article.html";
+  window.location.href = "lesson4_article.html"; // Update appropriately
 }
+
 function returnToCourseList() {
   window.location.href = "index.html";
 }
+
 function restartQuiz() {
   restartLesson();
 }
-
-
-

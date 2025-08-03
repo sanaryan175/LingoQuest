@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 4 – Hobbies | LingoQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: rgba(0, 77, 122, 0.9);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .navbar nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">LingoQuest</div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav>
+    <ul id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../career.html">Career</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Lesson 4: Hobbies in Japanese</h1>
+  <p>Let's learn how to talk about our hobbies in Japanese — fun things like reading, sports, and music!</p>
+</section>
+
+<!-- Lesson Article Content -->
+<section class="lesson-article">
+  <div class="content-wrapper">
+
+    <div class="learn-box">
+      <h2 class="section-heading">🎨 Hobbies Vocabulary (Words)</h2>
+      <p>Here are common Japanese words for hobbies:</p>
+      <ul class="number-grid">
+        <li><strong>しゅみ (趣味)</strong> – Hobby</li>
+        <li><strong>おんがくをきく (音楽を聴く)</strong> – Listen to music</li>
+        <li><strong>サッカーをする</strong> – Play soccer</li>
+        <li><strong>ほんをよむ (本を読む)</strong> – Read books</li>
+        <li><strong>えをかく (絵を描く)</strong> – Draw pictures</li>
+        <li><strong>おどる (踊る)</strong> – Dance</li>
+        <li><strong>およぐ (泳ぐ)</strong> – Swim</li>
+        <li><strong>しゃしんをとる (写真を撮る)</strong> – Take photos</li>
+        <li><strong>りょこうする (旅行する)</strong> – Travel</li>
+        <li><strong>りょうりする (料理する)</strong> – Cook</li>
+        <li><strong>えんげい (園芸)</strong> – Gardening</li>
+        <li><strong>ゲームをする</strong> – Play games</li>
+        <li><strong>ジョギングする</strong> – Jogging</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">📚 How to Say “I Like...”</h2>
+      <p>In Japanese, to say “I like something”, we use:</p>
+      <ul>
+        <li><strong>～が好きです</strong> (ga suki desu) = “I like ~”</li>
+      </ul>
+      <p><strong>Example:</strong></p>
+      <p>サッカーが好きです。<br><em>(Sakkā ga suki desu.)</em> → I like soccer.</p>
+
+      <p>If you want to say “I like doing something”, use:</p>
+      <ul>
+        <li><strong>～することが好きです</strong> = “I like to do ~”</li>
+      </ul>
+      <p><strong>Example:</strong></p>
+      <p>りょうりすることが好きです。<br><em>(Ryōri suru koto ga suki desu.)</em> → I like cooking.</p>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🧩 Word Order & Particles</h2>
+      <p>Japanese sentences usually follow this order:</p>
+      <p><strong>Topic + Object + Verb</strong></p>
+
+      <p>We use the particle <strong>を</strong> (wo) for objects of action:</p>
+      <ul>
+        <li>おんがくをきく – Listen to music</li>
+        <li>ゲームをする – Play games</li>
+      </ul>
+
+      <p>Examples:</p>
+      <p><strong>私は音楽を聴くのが好きです。</strong><br><em>(Watashi wa ongaku o kiku no ga suki desu.)</em> → I like listening to music.</p>
+
+      <p><strong>弟はゲームをするのが大好きです。</strong><br><em>(Otōto wa gēmu o suru no ga daisuki desu.)</em> → My younger brother loves playing games.</p>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">💬 How to Talk About Your Hobbies</h2>
+      <p>When you want to ask someone about their hobbies, say:</p>
+      <p><strong>しゅみはなんですか？</strong><br><em>(Shumi wa nan desu ka?)</em> – What is your hobby?</p>
+
+      <p><strong>Example answers:</strong></p>
+      <p>私はほんをよむのが好きです。<br><em>(Watashi wa hon o yomu no ga suki desu.)</em> – I like reading books.</p>
+      <p>週末に旅行します。<br><em>(Shūmatsu ni ryokō shimasu.)</em> – I travel on weekends.</p>
+      <p>母はえをかくのが好きです。<br><em>(Haha wa e o kaku no ga suki desu.)</em> – My mother likes drawing.</p>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🧠 Did You Know?</h2>
+      <ul>
+        <li>“しゅみ (shumi)” is used a lot in Japanese conversations. People love asking about hobbies!</li>
+        <li>Japanese schools have clubs for every hobby – music, anime, sports, gardening, and more!</li>
+        <li>To change an action (like reading) into a noun, you can add <strong>こと</strong> or <strong>の</strong>.</li>
+        <li>Example: よむ → よむこと (yomu koto) or よむの (yomu no) = “reading”</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Bottom Navigation Buttons -->
+<div class="bottom-nav-buttons">
+  <a href="index.html" class="btn nav-btn">← Back to Course List</a>
+  <a href="lesson4.html" class="btn nav-btn">Attempt Quiz →</a>
+</div>
+
+<style>
+  .number-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+
+  .bottom-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem auto 2rem;
+    padding: 1rem 2rem;
+    max-width: 900px;
+    flex-wrap: wrap;
+  }
+
+  .bottom-nav-buttons .nav-btn {
+    flex: 1;
+    text-align: center;
+    background-color: #004d7a;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+  }
+
+  .bottom-nav-buttons .nav-btn:hover {
+    background-color: #ff9500;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .bottom-nav-buttons {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  }
+</style>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 LingoQuest. All rights reserved.</p>
+</footer>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>
+

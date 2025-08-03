@@ -5,13 +5,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 1 – German Greetings</title>
+
+  <!-- Fonts + Confetti -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="lesson1.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="lesson1.css" />
+  <style>
+    @keyframes bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    .bounce {
+      animation: bounce 0.4s ease;
+    }
+
+    #sadEmoji {
+      transition: all 0.6s ease;
+      position: absolute;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      font-size: 48px;
+      z-index: 999;
+      display: none;
+      opacity: 0;
+    }
+  </style>
 </head>
 
 <body>
 
-  <div class="card">
+  <!-- Sad Emoji Visual Effect -->
+  <div id="sadEmoji">😢</div>
+
+  <!-- Main Game Container -->
+  <div class="card" id="gameContainer">
     <h2>🇩🇪 Lesson 1: Greetings</h2>
     <div class="xp">⭐ XP: <span id="xp">0</span></div>
     <div class="lives">❤️ Lives: <span id="lives">3</span></div>
@@ -26,20 +57,18 @@
       <div id="xpBar"></div>
     </div>
 
-    <!-- ✅ Buttons row - fixed -->
+    <!-- Buttons row -->
     <div class="buttons-row">
       <button id="skipBtn">⏭ Skip</button>
-
       <div class="right-buttons">
         <button id="checkBtn">✔ Check</button>
-        <button id="continueBtn" style="display:none;">➡ Continue</button>
+        <button id="continueBtn" style="display: none;">➡ Continue</button>
       </div>
     </div>
-
   </div>
 
   <!-- Already Passed Popup -->
-  <div class="popup" id="passedPopup">
+  <div class="popup" id="passedPopup" style="display:none;">
     <div class="popup-content">
       <h2>🎉 You already passed this lesson!</h2>
       <p>Want to restart?</p>
@@ -48,7 +77,7 @@
   </div>
 
   <!-- Victory Popup -->
-  <div class="popup" id="victoryPopup">
+  <div class="popup" id="victoryPopup" style="display:none;">
     <div class="popup-content">
       <h2>🎉 Yay! You did great!</h2>
       <p>You earned <span id="popupFinalXP">0</span> XP!</p>
@@ -61,7 +90,7 @@
   </div>
 
   <!-- Game Over Popup -->
-  <div class="popup" id="gameOverPopup">
+  <div class="popup" id="gameOverPopup" style="display:none;">
     <div class="popup-content">
       <h2>💔 You Lost the Game!</h2>
       <p>Don't worry! Try again and improve.</p>
@@ -71,12 +100,13 @@
     </div>
   </div>
 
-  <!-- Sounds -->
+  <!-- Audio -->
   <audio id="correctSound" src="../assets/sound/correct.mp3" preload="auto"></audio>
   <audio id="wrongSound" src="../assets/sound/wrong.mp3" preload="auto"></audio>
   <audio id="loseSound" src="../assets/sound/lose.mp3" preload="auto"></audio>
-
+  <audio id="victorySound" src="../assets/sound/victory.mp3" preload="auto"></audio>
+  <!-- JS Logic -->
   <script src="lesson1.js"></script>
-</body>
 
+</body>
 </html>

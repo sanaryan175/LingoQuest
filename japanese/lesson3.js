@@ -1,50 +1,97 @@
 document.addEventListener("DOMContentLoaded", function () {
   const questions = [
-    { question: "What is 'One' in German?", options: ["Eins", "Zwei", "Drei", "Vier"], answer: "Eins", explanation: "'Eins' means One." },
-    { question: "What is 'Three' in German?", options: ["Drei", "Zehn", "Acht", "Fünf"], answer: "Drei", explanation: "'Drei' means Three." },
-    { question: "Translate 'Five' into German.", options: ["Sechs", "Fünf", "Vier", "Sieben"], answer: "Fünf", explanation: "'Fünf' means Five." },
-    { question: "What is 'Zehn' in English?", options: ["Six", "Nine", "Ten", "Four"], answer: "Ten", explanation: "'Zehn' means Ten." },
-    { question: "What is 'Sieben'?", options: ["Seven", "Six", "Eight", "Nine"], answer: "Seven", explanation: "'Sieben' means Seven." },
-    { question: "How do you say 'Two' in German?", options: ["Neun", "Zwei", "Acht", "Drei"], answer: "Zwei", explanation: "'Zwei' means Two." }
+    {
+      question: "What is 'Father' in Japanese?",
+      options: ["おばあさん", "おじさん", "おとうさん", "あね"],
+      answer: "おとうさん",
+      explanation: "'おとうさん' (otōsan) means Father.",
+    },
+    {
+      question: "What does 'おかあさん' mean?",
+      options: ["Mother", "Grandmother", "Aunt", "Sister"],
+      answer: "Mother",
+      explanation: "'おかあさん' (okāsan) means Mother.",
+    },
+    {
+      question: "Translate 'おにいさん' into English.",
+      options: ["Father", "Younger brother", "Older brother", "Uncle"],
+      answer: "Older brother",
+      explanation: "'おにいさん' (onīsan) means Older Brother.",
+    },
+    {
+      question: "What is 'Younger sister' in Japanese?",
+      options: ["いもうと", "あね", "おば", "おじ"],
+      answer: "いもうと",
+      explanation: "'いもうと' (imōto) means Younger Sister.",
+    },
+    {
+      question: "What does 'あね' mean?",
+      options: ["Grandmother", "Older sister", "Mother", "Niece"],
+      answer: "Older sister",
+      explanation: "'あね' (ane) means Older Sister.",
+    },
+    {
+      question: "Translate 'おじいさん' to English.",
+      options: ["Uncle", "Grandfather", "Father", "Brother"],
+      answer: "Grandfather",
+      explanation: "'おじいさん' (ojīsan) means Grandfather.",
+    },
+    {
+      question: "What is 'おばあさん' in English?",
+      options: ["Mother", "Aunt", "Grandmother", "Sister"],
+      answer: "Grandmother",
+      explanation: "'おばあさん' (obāsan) means Grandmother.",
+    },
+    {
+      question: "What is 'Uncle' in Japanese?",
+      options: ["おじさん", "おにいさん", "いもうと", "おとうさん"],
+      answer: "おじさん",
+      explanation: "'おじさん' (ojisan) means Uncle.",
+    },
+    {
+      question: "What is 'Cousin' in Japanese?",
+      options: ["いとこ", "おば", "あに", "はは"],
+      answer: "いとこ",
+      explanation: "'いとこ' (itoko) means Cousin.",
+    },
+    {
+      question: "What does 'おばさん' mean?",
+      options: ["Sister", "Aunt", "Niece", "Grandmother"],
+      answer: "Aunt",
+      explanation: "'おばさん' (obasan) means Aunt.",
+    },
   ];
 
-  let xp = parseInt(localStorage.getItem("xpLesson2")) || 0;
-  let currentQuestion = parseInt(localStorage.getItem("currentQuestionLesson2")) || 0;
-  let lives = parseInt(localStorage.getItem("livesLesson2")) || 3;
-  let quizPassed = localStorage.getItem("quizPassedLesson2") === "true";
-
-  const questionElem = document.getElementById("question");
-  const optionsElem = document.getElementById("options");
-  const xpElem = document.getElementById("xp");
-  const livesElem = document.getElementById("lives");
-  const feedbackElem = document.getElementById("feedback");
-  const xpBar = document.getElementById("xpBar");
-
-  const gameContainer = document.getElementById("gameContainer");
-  const gameOverPopup = document.getElementById("gameOverPopup");
-  const victoryPopup = document.getElementById("victoryPopup");
-  const passedPopup = document.getElementById("passedPopup");
-  const popupFinalXP = document.getElementById("popupFinalXP");
-
-  const correctSound = document.getElementById("correctSound");
-  const wrongSound = document.getElementById("wrongSound");
-  const loseSound = document.getElementById("loseSound");
-  const victorySound = document.getElementById("victorySound");
-
-  const skipBtn = document.getElementById("skipBtn");
-  const checkBtn = document.getElementById("checkBtn");
-  const continueBtn = document.getElementById("continueBtn");
-
-  const svgContainer = document.getElementById("svgReactionContainer");
-
+  let xp = parseInt(localStorage.getItem("xpLesson3")) || 0;
+  let currentQuestion = parseInt(localStorage.getItem("currentQuestionLesson3")) || 0;
+  let lives = parseInt(localStorage.getItem("livesLesson3")) || 3;
   let waiting = false;
   let selectedOption = null;
   let selectedBtn = null;
 
   const skipPenalty = false;
 
-  if (quizPassed) {
-    gameContainer.style.display = "none";
+  const questionElem = document.getElementById("question");
+  const optionsElem = document.getElementById("options");
+  const xpElem = document.getElementById("xp");
+  const livesElem = document.getElementById("lives");
+  const feedbackElem = document.getElementById("feedback");
+
+  const gameOverPopup = document.getElementById("gameOverPopup");
+  const victoryPopup = document.getElementById("victoryPopup");
+  const passedPopup = document.getElementById("passedPopup");
+  const popupFinalXP = document.getElementById("popupFinalXP");
+  const xpBar = document.getElementById("xpBar");
+
+  const correctSound = document.getElementById("correctSound");
+  const wrongSound = document.getElementById("wrongSound");
+  const loseSound = document.getElementById("loseSound");
+
+  const skipBtn = document.getElementById("skipBtn");
+  const checkBtn = document.getElementById("checkBtn");
+  const continueBtn = document.getElementById("continueBtn");
+
+  if (xp >= questions.length * 10 && currentQuestion >= questions.length) {
     passedPopup.style.display = "flex";
     return;
   }
@@ -73,39 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function saveProgress() {
-    localStorage.setItem("xpLesson2", xp);
-    localStorage.setItem("currentQuestionLesson2", currentQuestion);
-    localStorage.setItem("livesLesson2", lives);
-  }
-
-  function showSVGReaction(type) {
-    if (!svgContainer) return;
-    let svg = "";
-
-    if (type === "wrong") {
-      svg = `<svg width="100" height="100" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="45" stroke="#ff4d4f" stroke-width="5" fill="none"/>
-        <line x1="35" y1="35" x2="65" y2="65" stroke="#ff4d4f" stroke-width="5"/>
-        <line x1="65" y1="35" x2="35" y2="65" stroke="#ff4d4f" stroke-width="5"/>
-      </svg>`;
-    } else if (type === "victory") {
-      svg = `<svg width="100" height="100" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="45" stroke="#00c853" stroke-width="5" fill="none"/>
-        <polyline points="30,55 45,70 70,35" fill="none" stroke="#00c853" stroke-width="5"/>
-      </svg>`;
-    } else if (type === "gameover") {
-      svg = `<svg width="100" height="100" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="45" stroke="#ff1744" stroke-width="5" fill="none"/>
-        <path d="M35,40 Q50,60 65,40" fill="none" stroke="#ff1744" stroke-width="5"/>
-      </svg>`;
-    }
-
-    svgContainer.innerHTML = svg;
-    svgContainer.classList.add("show");
-    setTimeout(() => {
-      svgContainer.classList.remove("show");
-      svgContainer.innerHTML = "";
-    }, 1200);
+    localStorage.setItem("xpLesson3", xp);
+    localStorage.setItem("currentQuestionLesson3", currentQuestion);
+    localStorage.setItem("livesLesson3", lives);
   }
 
   function checkAnswer(selected, btn) {
@@ -128,13 +145,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selected === current.answer) {
       xp += 10;
       feedbackElem.innerText = "✅ Correct!";
-      btn.classList.add("bounce");
-      correctSound?.cloneNode(true).play();
+      if (correctSound) { correctSound.currentTime = 0; correctSound.play(); }
     } else {
       lives -= 1;
       feedbackElem.innerText = `❌ Wrong! ${current.explanation}`;
-      wrongSound?.cloneNode(true).play();
-      showSVGReaction("wrong");
+      if (wrongSound) { wrongSound.currentTime = 0; wrongSound.play(); }
     }
 
     xpElem.innerText = xp;
@@ -144,18 +159,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (lives <= 0) {
       hideControlButtons();
-      loseSound?.cloneNode(true).play();
-      showSVGReaction("gameover");
+      if (loseSound) { loseSound.currentTime = 0; loseSound.play(); }
       setTimeout(() => gameOverPopup.style.display = "flex", 800);
     } else if (currentQuestion === questions.length - 1) {
       hideControlButtons();
-      localStorage.setItem("quizPassedLesson2", "true");
       setTimeout(() => {
         popupFinalXP.innerText = xp;
         victoryPopup.style.display = "flex";
-        confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
-        victorySound?.cloneNode(true).play();
-        showSVGReaction("victory");
       }, 800);
     } else {
       showContinueButton();
@@ -174,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
     optionsElem.innerHTML = "";
     feedbackElem.innerText = "";
 
-    current.options.forEach(opt => {
+    current.options.forEach((opt) => {
       const btn = document.createElement("button");
       btn.innerText = opt;
       btn.classList.remove("selected", "correct", "wrong");
@@ -194,33 +204,27 @@ document.addEventListener("DOMContentLoaded", function () {
     saveProgress();
   }
 
-  skipBtn.addEventListener("click", () => {
+  skipBtn.addEventListener("click", function () {
     if (skipPenalty) {
       lives -= 1;
       if (lives <= 0) {
         saveProgress();
         hideControlButtons();
-        loseSound?.cloneNode(true).play();
-        showSVGReaction("gameover");
+        if (loseSound) { loseSound.currentTime = 0; loseSound.play(); }
         return setTimeout(() => gameOverPopup.style.display = "flex", 800);
       }
     }
-
     currentQuestion++;
     if (currentQuestion >= questions.length) {
       hideControlButtons();
-      localStorage.setItem("quizPassedLesson2", "true");
       popupFinalXP.innerText = xp;
       victoryPopup.style.display = "flex";
-      confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
-      victorySound?.cloneNode(true).play();
-      showSVGReaction("victory");
     } else {
       loadQuestion();
     }
   });
 
-  checkBtn.addEventListener("click", () => {
+  checkBtn.addEventListener("click", function () {
     if (!selectedOption) {
       alert("Please select an option first!");
       return;
@@ -228,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
     checkAnswer(selectedOption, selectedBtn);
   });
 
-  continueBtn.addEventListener("click", () => {
+  continueBtn.addEventListener("click", function () {
     currentQuestion++;
     loadQuestion();
   });
@@ -236,25 +240,18 @@ document.addEventListener("DOMContentLoaded", function () {
   loadQuestion();
 });
 
-// Global controls
 function restartLesson() {
-  localStorage.removeItem("xpLesson2");
-  localStorage.removeItem("currentQuestionLesson2");
-  localStorage.removeItem("livesLesson2");
-  localStorage.removeItem("quizPassedLesson2");
+  localStorage.removeItem("xpLesson3");
+  localStorage.removeItem("currentQuestionLesson3");
+  localStorage.removeItem("livesLesson3");
   location.reload();
 }
-
 function goToNextLesson() {
-  window.location.href = "lesson3_article.html"; // Adjust if needed
+  window.location.href = "lesson4_article.html";
 }
-
 function returnToCourseList() {
   window.location.href = "index.html";
 }
-
 function restartQuiz() {
   restartLesson();
 }
-
-

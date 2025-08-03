@@ -35,6 +35,98 @@
         display: flex;
       }
     }
+     .course-hero {
+      background: linear-gradient(to right, rgba(248, 249, 250, 0.95), rgba(255, 255, 255, 0.95)),
+                  url('assets/germany-flag.png') no-repeat right center;
+      background-size: cover;
+      height: 470px;
+      border-radius: 25px;
+      margin: 60px auto;
+      padding: 40px;
+      max-width: 1100px;
+      color:  #004d7a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .course-hero.reverse {
+      flex-direction: row-reverse;
+      background: linear-gradient(to right, rgba(246, 247, 249, 0.95), rgba(255, 255, 255, 0.95)),
+                  url('assets/japan-flag.png') no-repeat left center;
+      background-size: cover;
+    }
+
+    .course-hero:hover {
+      transform: scale(1.02);
+    }
+
+    .course-text {
+      flex: 1;
+    }
+
+    .course-text h2 {
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+    }
+
+    .course-text p {
+      font-size: 1.15rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .course-text .btn {
+      background-color: #ff9500;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s;
+    }
+
+    .course-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  max-width: 500px;
+  max-height: 360px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+    @media (max-width: 768px) {
+      .course-hero, .course-hero.reverse {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        background-position: center !important;
+      }
+
+      .course-text h2 {
+        font-size: 1.8rem;
+      }
+
+      .course-text p {
+        font-size: 1rem;
+      }
+
+      .course-image {
+        margin-top: 20px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -63,32 +155,42 @@
   </section>
 
   <!-- Shortcut Cards -->
-  <section class="courses-preview">
-    <div class="course-cards">
-      
-      <div class="card">
-        <img src="assets/images/about-thumb.jpg" alt="About Us" style="border-radius: 12px; width: 100%; height: 200px; object-fit: cover;" />
-        <h3>About Us</h3>
-        <p>Learn more about our mission, values, and the team behind LingoQuest.</p>
-        <a href="about.html">Read More →</a>
-      </div>
+<!-- About Us Banner -->
+<section class="course-hero">
+  <div class="course-text">
+    <h2>Who We Are</h2>
+    <p>Get to know the vision, values, and team behind LingoQuest. We’re on a mission to make language learning joyful, effective, and accessible for everyone.</p>
+    <a href="about.html" class="btn">Read More</a>
+  </div>
+  <div class="course-image">
+    <img src="assets/images/about-thumb.jpg" alt="About LingoQuest" />
+  </div>
+</section>
 
-      <div class="card">
-        <img src="assets/images/courses-thumb.jpg" alt="Courses" style="border-radius: 12px; width: 100%; height: 200px; object-fit: cover;" />
-        <h3>Our Courses</h3>
-        <p>Choose from beginner to advanced levels for German, Spanish, and Hindi.</p>
-        <a href="courses.html">View Courses →</a>
-      </div>
+<!-- Our Courses Banner -->
+<section class="course-hero reverse">
+  <div class="course-text">
+    <h2>Explore Our Courses</h2>
+    <p>Choose from beginner to advanced levels in German, Spanish, Hindi & more — all with interactive lessons and fun challenges.</p>
+    <a href="courses.html" class="btn">View Courses</a>
+  </div>
+  <div class="course-image">
+    <img src="assets/images/courses-thumb.jpg" alt="Language Courses at LingoQuest" />
+  </div>
+</section>
 
-      <div class="card">
-        <img src="assets/images/gallery-thumb.jpg" alt="Gallery" style="border-radius: 12px; width: 100%; height: 200px; object-fit: cover;" />
-        <h3>Gallery</h3>
-        <p>Check out photos from events, student moments, and classroom memories.</p>
-        <a href="gallery.html">Browse Gallery →</a>
-      </div>
+<!-- Gallery Banner -->
+<section class="course-hero">
+  <div class="course-text">
+    <h2>Moments at LingoQuest</h2>
+    <p>Peek into our gallery and relive the best moments — classroom fun, events, student milestones, and more!</p>
+    <a href="gallery.html" class="btn">Browse Gallery</a>
+  </div>
+  <div class="course-image">
+    <img src="assets/images/gallery-thumb.jpg" alt="LingoQuest Photo Gallery" />
+  </div>
+</section>
 
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer>

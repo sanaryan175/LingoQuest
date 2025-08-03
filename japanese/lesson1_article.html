@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 1 – Greetings | LingoQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: rgba(0, 77, 122, 0.9);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .navbar nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">LingoQuest</div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav>
+    <ul id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../career.html">Career</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Lesson 1: Greetings in Japanese</h1>
+  <p>Begin your Japanese learning journey by mastering basic greetings and farewells.</p>
+</section>
+
+<!-- Lesson Article Content -->
+<section class="lesson-article">
+  <div class="content-wrapper">
+
+    <div class="learn-box">
+      <h2 class="section-heading">👋 Common Japanese Greetings</h2>
+      <p>In Japanese, greetings depend on the time of day and level of formality. Here are the basics:</p>
+      <ul>
+        <li><strong>こんにちは (Konnichiwa)</strong> – Hello / Good afternoon</li>
+        <li><strong>おはようございます (Ohayou gozaimasu)</strong> – Good morning (formal)</li>
+        <li><strong>おはよう (Ohayou)</strong> – Good morning (casual)</li>
+        <li><strong>こんばんは (Konbanwa)</strong> – Good evening</li>
+        <li><strong>やあ (Yaa)</strong> – Hi! (very casual)</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🙋 Saying Goodbye</h2>
+      <p>Learn how to politely say goodbye in different situations:</p>
+      <ul>
+        <li><strong>さようなら (Sayounara)</strong> – Goodbye (formal, long-term parting)</li>
+        <li><strong>じゃあね (Jaa ne)</strong> – See ya (casual)</li>
+        <li><strong>またね (Mata ne)</strong> – See you again</li>
+        <li><strong>おやすみなさい (Oyasuminasai)</strong> – Good night</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">💡 Quick Grammar Tips</h2>
+      <ul>
+        <li>Japanese greetings often depend on the time of day and relationship.</li>
+        <li>Use <strong>です (desu)</strong> to make sentences more polite.</li>
+        <li><strong>お</strong> or <strong>ご</strong> is added to make expressions more respectful (e.g., おはよう).</li>
+      </ul>
+    </div>
+
+<div class="learn-box">
+  <h2 class="section-heading">📘 Example Conversations</h2>
+
+  <p>
+    <strong>Person A:</strong> おはようございます！<br>
+    <em>Person A: Ohayou gozaimasu! – Good morning!</em><br><br>
+
+    <strong>Person B:</strong> おはようございます！元気ですか？<br>
+    <em>Person B: Ohayou gozaimasu! Genki desu ka? – Good morning! How are you?</em>
+  </p>
+
+  <br>
+
+  <p>
+    <strong>Person A:</strong> こんにちは！じゃあね！<br>
+    <em>Person A: Konnichiwa! Jaa ne! – Hello! See ya!</em><br><br>
+
+    <strong>Person B:</strong> またね！<br>
+    <em>Person B: Mata ne! – See you again!</em>
+  </p>
+</div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">💭 Did You Know?</h2>
+      <ul>
+        <li>Japanese people bow when greeting or saying goodbye—it shows respect.</li>
+        <li><strong>さようなら</strong> is rarely used among friends; it implies a long separation.</li>
+        <li>In casual settings, <strong>じゃあね</strong> or <strong>バイバイ</strong> ("Bye-bye") is more common.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Bottom Navigation Buttons (above footer) -->
+<div class="bottom-nav-buttons">
+  <a href="index.html" class="btn nav-btn">← Back to Course List</a>
+  <a href="lesson1.html" class="btn nav-btn">Attempt Quiz →</a>
+</div>
+
+<style>
+  .bottom-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem auto 2rem;
+    padding: 1rem 2rem;
+    max-width: 900px;
+    flex-wrap: wrap;
+  }
+
+  .bottom-nav-buttons .nav-btn {
+    flex: 1;
+    text-align: center;
+    background-color: #004d7a;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+  }
+
+  .bottom-nav-buttons .nav-btn:hover {
+    background-color: #ff9500;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .bottom-nav-buttons {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  }
+</style>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 LingoQuest. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>

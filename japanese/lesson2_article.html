@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 2 – Numbers | LingoQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: rgba(0, 77, 122, 0.9);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .navbar nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">LingoQuest</div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav>
+    <ul id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../career.html">Career</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Lesson 2: Numbers in Japanese</h1>
+  <p>Learn how to count and use numbers in daily Japanese situations.</p>
+</section>
+
+<!-- Lesson Article Content -->
+<section class="lesson-article">
+  <div class="content-wrapper">
+
+    <div class="learn-box">
+      <h2 class="section-heading">🔢 Numbers from 0 to 25</h2>
+      <ul>
+        <li><strong>0</strong> – ゼロ (Zero)</li>
+        <li><strong>1</strong> – 一 (いち / Ichi)</li>
+        <li><strong>2</strong> – 二 (に / Ni)</li>
+        <li><strong>3</strong> – 三 (さん / San)</li>
+        <li><strong>4</strong> – 四 (よん / Yon)</li>
+        <li><strong>5</strong> – 五 (ご / Go)</li>
+        <li><strong>6</strong> – 六 (ろく / Roku)</li>
+        <li><strong>7</strong> – 七 (なな / Nana)</li>
+        <li><strong>8</strong> – 八 (はち / Hachi)</li>
+        <li><strong>9</strong> – 九 (きゅう / Kyuu)</li>
+        <li><strong>10</strong> – 十 (じゅう / Juu)</li>
+        <li><strong>11</strong> – 十一 (じゅういち / Juuichi)</li>
+        <li><strong>12</strong> – 十二 (じゅうに / Juuni)</li>
+        <li><strong>13</strong> – 十三 (じゅうさん / Juusan)</li>
+        <li><strong>14</strong> – 十四 (じゅうよん / Juuyon)</li>
+        <li><strong>15</strong> – 十五 (じゅうご / Juugo)</li>
+        <li><strong>16</strong> – 十六 (じゅうろく / Juuroku)</li>
+        <li><strong>17</strong> – 十七 (じゅうなな / Juunana)</li>
+        <li><strong>18</strong> – 十八 (じゅうはち / Juuhachi)</li>
+        <li><strong>19</strong> – 十九 (じゅうきゅう / Juukyuu)</li>
+        <li><strong>20</strong> – 二十 (にじゅう / Nijuu)</li>
+        <li><strong>21</strong> – 二十一 (にじゅういち / Nijuuichi)</li>
+        <li><strong>22</strong> – 二十二 (にじゅうに / Nijuuni)</li>
+        <li><strong>23</strong> – 二十三 (にじゅうさん / Nijuusan)</li>
+        <li><strong>24</strong> – 二十四 (にじゅうよん / Nijuuyon)</li>
+        <li><strong>25</strong> – 二十五 (にじゅうご / Nijuugo)</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🎯 Milestone Numbers</h2>
+      <ul>
+        <li><strong>30</strong> – 三十 (さんじゅう / Sanjuu)</li>
+        <li><strong>40</strong> – 四十 (よんじゅう / Yonjuu)</li>
+        <li><strong>50</strong> – 五十 (ごじゅう / Gojuu)</li>
+        <li><strong>100</strong> – 百 (ひゃく / Hyaku)</li>
+        <li><strong>1000</strong> – 千 (せん / Sen)</li>
+        <li><strong>10,000</strong> – 一万 (いちまん / Ichiman)</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">💡 Grammar & Number Rules</h2>
+      <ul>
+        <li>Japanese numbers stack simply using place values: e.g., 二十一 = 21 ("2 tens + 1").</li>
+        <li><strong>Hyaku (100)</strong> and <strong>Sen (1000)</strong> are standalone but combine easily: e.g., 三百 (300).</li>
+        <li>The number 4 can also be read as "し (shi)", and 7 as "しち (shichi)", but “よん” and “なな” are preferred to avoid confusion.</li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">📘 Usage in Context</h2>
+      <p><strong>私は二十歳です。</strong> – Watashi wa hatachi desu. → I am 20 years old.</p>
+      <p><strong>それは五百円です。</strong> – Sore wa gohyaku en desu. → That is 500 yen.</p>
+      <p><strong>三人が来ました。</strong> – San-nin ga kimashita. → Three people came.</p>
+      <p><strong>部屋は十番です。</strong> – Heya wa juu-ban desu. → The room is number 10.</p>
+      <p><strong>彼は一万人のフォロワーがいます。</strong> – Kare wa ichiman nin no forowā ga imasu. → He has 10,000 followers.</p>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🧠 Fun Facts</h2>
+      <ul>
+        <li>Japanese uses different counters for objects (e.g., "〜人" for people, "〜本" for long objects).</li>
+        <li>The number 4 (し / shi) sounds like "death", so it's often avoided in hospitals and hotels.</li>
+        <li>Japanese prices usually end in 〜円 (yen). Example: 850円 = Happyaku gojuu en.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Bottom Navigation Buttons (above footer) -->
+<div class="bottom-nav-buttons">
+  <a href="index.html" class="btn nav-btn">← Back to Course List</a>
+  <a href="lesson2.html" class="btn nav-btn">Attempt Quiz →</a>
+</div>
+
+<style>
+  .bottom-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem auto 2rem;
+    padding: 1rem 2rem;
+    max-width: 900px;
+    flex-wrap: wrap;
+  }
+
+  .bottom-nav-buttons .nav-btn {
+    flex: 1;
+    text-align: center;
+    background-color: #004d7a;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+  }
+
+  .bottom-nav-buttons .nav-btn:hover {
+    background-color: #ff9500;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .bottom-nav-buttons {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  }
+</style>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 LingoQuest. All rights reserved.</p>
+</footer>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>
