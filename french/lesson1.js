@@ -1,74 +1,51 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const questions = [
-    {
-      question: "What is 'Father' in Japanese?",
-      options: ["おばあさん", "おじさん", "おとうさん", "あね"],
-      answer: "おとうさん",
-      explanation: "'おとうさん' (otōsan) means Father.",
-    },
-    {
-      question: "What does 'おかあさん' mean?",
-      options: ["Mother", "Grandmother", "Aunt", "Sister"],
-      answer: "Mother",
-      explanation: "'おかあさん' (okāsan) means Mother.",
-    },
-    {
-      question: "Translate 'おにいさん' into English.",
-      options: ["Father", "Younger brother", "Older brother", "Uncle"],
-      answer: "Older brother",
-      explanation: "'おにいさん' (onīsan) means Older Brother.",
-    },
-    {
-      question: "What is 'Younger sister' in Japanese?",
-      options: ["いもうと", "あね", "おば", "おじ"],
-      answer: "いもうと",
-      explanation: "'いもうと' (imōto) means Younger Sister.",
-    },
-    {
-      question: "What does 'あね' mean?",
-      options: ["Grandmother", "Older sister", "Mother", "Niece"],
-      answer: "Older sister",
-      explanation: "'あね' (ane) means Older Sister.",
-    },
-    {
-      question: "Translate 'おじいさん' to English.",
-      options: ["Uncle", "Grandfather", "Father", "Brother"],
-      answer: "Grandfather",
-      explanation: "'おじいさん' (ojīsan) means Grandfather.",
-    },
-    {
-      question: "What is 'おばあさん' in English?",
-      options: ["Mother", "Aunt", "Grandmother", "Sister"],
-      answer: "Grandmother",
-      explanation: "'おばあさん' (obāsan) means Grandmother.",
-    },
-    {
-      question: "What is 'Uncle' in Japanese?",
-      options: ["おじさん", "おにいさん", "いもうと", "おとうさん"],
-      answer: "おじさん",
-      explanation: "'おじさん' (ojisan) means Uncle.",
-    },
-    {
-      question: "What is 'Cousin' in Japanese?",
-      options: ["いとこ", "おば", "あに", "はは"],
-      answer: "いとこ",
-      explanation: "'いとこ' (itoko) means Cousin.",
-    },
-    {
-      question: "What does 'おばさん' mean?",
-      options: ["Sister", "Aunt", "Niece", "Grandmother"],
-      answer: "Aunt",
-      explanation: "'おばさん' (obasan) means Aunt.",
-    },
-  ];
+const questions = [
+  {
+    question: "What is 'Hello' in French?",
+    options: ["Bonjour", "Merci", "Au revoir", "S'il vous plaît"],
+    answer: "Bonjour",
+    explanation: "'Bonjour' means Hello or Good day in French."
+  },
+  {
+    question: "How do you say 'Thank you'?",
+    options: ["Bonjour", "Merci", "Oui", "Non"],
+    answer: "Merci",
+    explanation: "'Merci' means Thank you in French."
+  },
+  {
+    question: "What is 'Goodbye' in French?",
+    options: ["Bonsoir", "Salut", "Merci", "Au revoir"],
+    answer: "Au revoir",
+    explanation: "'Au revoir' is the standard way to say Goodbye in French."
+  },
+  {
+    question: "What does 'Bonsoir' mean?",
+    options: ["Good evening", "Good night", "Hello", "Please"],
+    answer: "Good evening",
+    explanation: "'Bonsoir' means Good evening in French."
+  },
+  {
+    question: "Translate 'Yes' in French.",
+    options: ["Non", "Merci", "Oui", "Salut"],
+    answer: "Oui",
+    explanation: "'Oui' means Yes in French."
+  },
+  {
+    question: "How do you say 'Please' in French?",
+    options: ["Merci", "S'il vous plaît", "Au revoir", "Bonjour"],
+    answer: "S'il vous plaît",
+    explanation: "'S'il vous plaît' means Please in French."
+  }
+];
 
-  let xp = parseInt(localStorage.getItem("xpLesson3")) || 0;
-  let currentQuestion = parseInt(localStorage.getItem("currentQuestionLesson3")) || 0;
-  let lives = parseInt(localStorage.getItem("livesLesson3")) || 3;
+  let xp = parseInt(localStorage.getItem("xpLesson1")) || 0;
+  let currentQuestion = parseInt(localStorage.getItem("currentQuestionLesson1")) || 0;
+  let lives = parseInt(localStorage.getItem("livesLesson1")) || 3;
+  let quizPassed = localStorage.getItem("quizPassedLesson1") === "true";
+
   let waiting = false;
   let selectedOption = null;
   let selectedBtn = null;
-
   const skipPenalty = false;
 
   const questionElem = document.getElementById("question");
@@ -77,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const livesElem = document.getElementById("lives");
   const feedbackElem = document.getElementById("feedback");
 
+  const gameContainer = document.getElementById("gameContainer");
   const gameOverPopup = document.getElementById("gameOverPopup");
   const victoryPopup = document.getElementById("victoryPopup");
   const passedPopup = document.getElementById("passedPopup");
@@ -86,12 +64,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const correctSound = document.getElementById("correctSound");
   const wrongSound = document.getElementById("wrongSound");
   const loseSound = document.getElementById("loseSound");
+  const victorySound = document.getElementById("victorySound");
 
   const skipBtn = document.getElementById("skipBtn");
   const checkBtn = document.getElementById("checkBtn");
   const continueBtn = document.getElementById("continueBtn");
 
-  if (xp >= questions.length * 10 && currentQuestion >= questions.length) {
+  const svgContainer = document.getElementById("svgReactionContainer");
+
+  if (quizPassed) {
+    gameContainer.style.display = "none";
     passedPopup.style.display = "flex";
     return;
   }
@@ -120,9 +102,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function saveProgress() {
-    localStorage.setItem("xpLesson3", xp);
-    localStorage.setItem("currentQuestionLesson3", currentQuestion);
-    localStorage.setItem("livesLesson3", lives);
+    localStorage.setItem("xpLesson1", xp);
+    localStorage.setItem("currentQuestionLesson1", currentQuestion);
+    localStorage.setItem("livesLesson1", lives);
+  }
+
+  function showSVGReaction(type) {
+    if (!svgContainer) return;
+    let svg = "";
+
+    if (type === "wrong") {
+      svg = `
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" stroke="#ff4d4f" stroke-width="5" fill="none"/>
+          <line x1="35" y1="35" x2="65" y2="65" stroke="#ff4d4f" stroke-width="5" />
+          <line x1="65" y1="35" x2="35" y2="65" stroke="#ff4d4f" stroke-width="5" />
+        </svg>`;
+    } else if (type === "victory") {
+      svg = `
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" stroke="#00c853" stroke-width="5" fill="none"/>
+          <polyline points="30,55 45,70 70,35" fill="none" stroke="#00c853" stroke-width="5" />
+        </svg>`;
+    } else if (type === "gameover") {
+      svg = `
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" stroke="#ff1744" stroke-width="5" fill="none"/>
+          <path d="M35,40 Q50,60 65,40" fill="none" stroke="#ff1744" stroke-width="5"/>
+        </svg>`;
+    }
+
+    svgContainer.innerHTML = svg;
+    svgContainer.classList.add("show");
+    setTimeout(() => {
+      svgContainer.classList.remove("show");
+      svgContainer.innerHTML = "";
+    }, 1200);
   }
 
   function checkAnswer(selected, btn) {
@@ -145,11 +160,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selected === current.answer) {
       xp += 10;
       feedbackElem.innerText = "✅ Correct!";
-      if (correctSound) { correctSound.currentTime = 0; correctSound.play(); }
+      btn.classList.add("bounce");
+      if (correctSound) correctSound.cloneNode(true).play();
     } else {
       lives -= 1;
       feedbackElem.innerText = `❌ Wrong! ${current.explanation}`;
-      if (wrongSound) { wrongSound.currentTime = 0; wrongSound.play(); }
+      if (wrongSound) wrongSound.cloneNode(true).play();
+      showSVGReaction("wrong");
     }
 
     xpElem.innerText = xp;
@@ -159,13 +176,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (lives <= 0) {
       hideControlButtons();
-      if (loseSound) { loseSound.currentTime = 0; loseSound.play(); }
+      if (loseSound) loseSound.cloneNode(true).play();
+      showSVGReaction("gameover");
       setTimeout(() => gameOverPopup.style.display = "flex", 800);
     } else if (currentQuestion === questions.length - 1) {
       hideControlButtons();
+      localStorage.setItem("quizPassedLesson1", "true");
       setTimeout(() => {
         popupFinalXP.innerText = xp;
         victoryPopup.style.display = "flex";
+        confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
+        if (victorySound) victorySound.cloneNode(true).play();
+        showSVGReaction("victory");
       }, 800);
     } else {
       showContinueButton();
@@ -210,15 +232,20 @@ document.addEventListener("DOMContentLoaded", function () {
       if (lives <= 0) {
         saveProgress();
         hideControlButtons();
-        if (loseSound) { loseSound.currentTime = 0; loseSound.play(); }
+        if (loseSound) loseSound.cloneNode(true).play();
+        showSVGReaction("gameover");
         return setTimeout(() => gameOverPopup.style.display = "flex", 800);
       }
     }
     currentQuestion++;
     if (currentQuestion >= questions.length) {
       hideControlButtons();
+      localStorage.setItem("quizPassedLesson1", "true");
       popupFinalXP.innerText = xp;
       victoryPopup.style.display = "flex";
+      confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
+      if (victorySound) victorySound.cloneNode(true).play();
+      showSVGReaction("victory");
     } else {
       loadQuestion();
     }
@@ -240,14 +267,16 @@ document.addEventListener("DOMContentLoaded", function () {
   loadQuestion();
 });
 
+// Global controls
 function restartLesson() {
-  localStorage.removeItem("xpLesson3");
-  localStorage.removeItem("currentQuestionLesson3");
-  localStorage.removeItem("livesLesson3");
+  localStorage.removeItem("xpLesson1");
+  localStorage.removeItem("currentQuestionLesson1");
+  localStorage.removeItem("livesLesson1");
+  localStorage.removeItem("quizPassedLesson1");
   location.reload();
 }
 function goToNextLesson() {
-  window.location.href = "lesson4_article.html";
+  window.location.href = "lesson2_article.html";
 }
 function returnToCourseList() {
   window.location.href = "index.html";
