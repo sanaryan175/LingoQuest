@@ -8,28 +8,24 @@ document.addEventListener("DOMContentLoaded", function () {
     { question: "How do you say 'Please'?", options: ["Danke", "Willkommen", "Bitte", "Hallo"], answer: "Bitte", explanation: "'Bitte' means Please or You're welcome." }
   ];
 
+
   let xp = parseInt(localStorage.getItem("xpLesson1")) || 0;
   let currentQuestion = parseInt(localStorage.getItem("currentQuestionLesson1")) || 0;
   let lives = parseInt(localStorage.getItem("livesLesson1")) || 3;
   let quizPassed = localStorage.getItem("quizPassedLesson1") === "true";
-
-  let waiting = false;
-  let selectedOption = null;
-  let selectedBtn = null;
-  const skipPenalty = false;
 
   const questionElem = document.getElementById("question");
   const optionsElem = document.getElementById("options");
   const xpElem = document.getElementById("xp");
   const livesElem = document.getElementById("lives");
   const feedbackElem = document.getElementById("feedback");
+  const xpBar = document.getElementById("xpBar");
 
   const gameContainer = document.getElementById("gameContainer");
   const gameOverPopup = document.getElementById("gameOverPopup");
   const victoryPopup = document.getElementById("victoryPopup");
   const passedPopup = document.getElementById("passedPopup");
   const popupFinalXP = document.getElementById("popupFinalXP");
-  const xpBar = document.getElementById("xpBar");
 
   const correctSound = document.getElementById("correctSound");
   const wrongSound = document.getElementById("wrongSound");
@@ -41,6 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const continueBtn = document.getElementById("continueBtn");
 
   const svgContainer = document.getElementById("svgReactionContainer");
+
+  let waiting = false;
+  let selectedOption = null;
+  let selectedBtn = null;
+
+  const skipPenalty = false;
 
   if (quizPassed) {
     gameContainer.style.display = "none";
@@ -82,24 +84,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let svg = "";
 
     if (type === "wrong") {
-      svg = `
-        <svg width="100" height="100" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" stroke="#ff4d4f" stroke-width="5" fill="none"/>
-          <line x1="35" y1="35" x2="65" y2="65" stroke="#ff4d4f" stroke-width="5" />
-          <line x1="65" y1="35" x2="35" y2="65" stroke="#ff4d4f" stroke-width="5" />
-        </svg>`;
+      svg = `<svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="#ff4d4f" stroke-width="5" fill="none"/>
+        <line x1="35" y1="35" x2="65" y2="65" stroke="#ff4d4f" stroke-width="5"/>
+        <line x1="65" y1="35" x2="35" y2="65" stroke="#ff4d4f" stroke-width="5"/>
+      </svg>`;
     } else if (type === "victory") {
-      svg = `
-        <svg width="100" height="100" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" stroke="#00c853" stroke-width="5" fill="none"/>
-          <polyline points="30,55 45,70 70,35" fill="none" stroke="#00c853" stroke-width="5" />
-        </svg>`;
+      svg = `<svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="#00c853" stroke-width="5" fill="none"/>
+        <polyline points="30,55 45,70 70,35" fill="none" stroke="#00c853" stroke-width="5"/>
+      </svg>`;
     } else if (type === "gameover") {
-      svg = `
-        <svg width="100" height="100" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" stroke="#ff1744" stroke-width="5" fill="none"/>
-          <path d="M35,40 Q50,60 65,40" fill="none" stroke="#ff1744" stroke-width="5"/>
-        </svg>`;
+      svg = `<svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="#ff1744" stroke-width="5" fill="none"/>
+        <path d="M35,40 Q50,60 65,40" fill="none" stroke="#ff1744" stroke-width="5"/>
+      </svg>`;
     }
 
     svgContainer.innerHTML = svg;
@@ -131,11 +130,11 @@ document.addEventListener("DOMContentLoaded", function () {
       xp += 10;
       feedbackElem.innerText = "✅ Correct!";
       btn.classList.add("bounce");
-      if (correctSound) correctSound.cloneNode(true).play();
+      correctSound?.cloneNode(true).play();
     } else {
       lives -= 1;
       feedbackElem.innerText = `❌ Wrong! ${current.explanation}`;
-      if (wrongSound) wrongSound.cloneNode(true).play();
+      wrongSound?.cloneNode(true).play();
       showSVGReaction("wrong");
     }
 
@@ -146,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (lives <= 0) {
       hideControlButtons();
-      if (loseSound) loseSound.cloneNode(true).play();
+      loseSound?.cloneNode(true).play();
       showSVGReaction("gameover");
       setTimeout(() => gameOverPopup.style.display = "flex", 800);
     } else if (currentQuestion === questions.length - 1) {
@@ -156,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
         popupFinalXP.innerText = xp;
         victoryPopup.style.display = "flex";
         confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
-        if (victorySound) victorySound.cloneNode(true).play();
+        victorySound?.cloneNode(true).play();
         showSVGReaction("victory");
       }, 800);
     } else {
@@ -176,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
     optionsElem.innerHTML = "";
     feedbackElem.innerText = "";
 
-    current.options.forEach((opt) => {
+    current.options.forEach(opt => {
       const btn = document.createElement("button");
       btn.innerText = opt;
       btn.classList.remove("selected", "correct", "wrong");
@@ -196,17 +195,18 @@ document.addEventListener("DOMContentLoaded", function () {
     saveProgress();
   }
 
-  skipBtn.addEventListener("click", function () {
+  skipBtn.addEventListener("click", () => {
     if (skipPenalty) {
       lives -= 1;
       if (lives <= 0) {
         saveProgress();
         hideControlButtons();
-        if (loseSound) loseSound.cloneNode(true).play();
+        loseSound?.cloneNode(true).play();
         showSVGReaction("gameover");
         return setTimeout(() => gameOverPopup.style.display = "flex", 800);
       }
     }
+
     currentQuestion++;
     if (currentQuestion >= questions.length) {
       hideControlButtons();
@@ -214,14 +214,14 @@ document.addEventListener("DOMContentLoaded", function () {
       popupFinalXP.innerText = xp;
       victoryPopup.style.display = "flex";
       confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
-      if (victorySound) victorySound.cloneNode(true).play();
+      victorySound?.cloneNode(true).play();
       showSVGReaction("victory");
     } else {
       loadQuestion();
     }
   });
 
-  checkBtn.addEventListener("click", function () {
+  checkBtn.addEventListener("click", () => {
     if (!selectedOption) {
       alert("Please select an option first!");
       return;
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
     checkAnswer(selectedOption, selectedBtn);
   });
 
-  continueBtn.addEventListener("click", function () {
+  continueBtn.addEventListener("click", () => {
     currentQuestion++;
     loadQuestion();
   });
@@ -245,15 +245,19 @@ function restartLesson() {
   localStorage.removeItem("quizPassedLesson1");
   location.reload();
 }
+
 function goToNextLesson() {
-  window.location.href = "lesson2_article.html";
+  window.location.href = "lesson2_article.html"; // Adjust if needed
 }
+
 function returnToCourseList() {
   window.location.href = "index.html";
 }
+
 function restartQuiz() {
   restartLesson();
 }
+
 
 
 
