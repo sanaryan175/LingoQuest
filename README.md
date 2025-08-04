@@ -52,7 +52,7 @@ lingoquest/
 
 🙌 Acknowledgments
 
-Designed and developed by  [Sanskriti Gupta](https://github.com/sanaryan175)and Jainam Dudhediya
+Designed and developed by  [Sanskriti Gupta](https://github.com/sanaryan175) and Jainam Dudhediya
 
 Inspired by apps like Duolingo, LingQ, and Memrise
 
