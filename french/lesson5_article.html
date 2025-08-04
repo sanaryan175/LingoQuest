@@ -3,28 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 5 – Days, Months & Seasons | LingoQuest</title>
+  <title>Lesson 4 – Hobbies | LingoQuest</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
-    .menu-toggle { display: none; font-size: 2rem; background: none; border: none; color: white; cursor: pointer; }
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      .navbar nav ul {
-        display: none; flex-direction: column; gap: 1rem; width: 100%;
-        background: rgba(0, 77, 122, 0.9); padding: 1rem; border-radius: 12px;
-      }
-      .navbar nav ul.show { display: flex; }
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
     }
-    .number-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.8rem 1.5rem; margin-top: 1rem; }
-    .jp-word { font-size: 1.2rem; font-weight: bold; color: #222; }
-    .romaji { font-style: italic; color: #666; }
-    .meaning { color: #004d7a; font-weight: bold; }
-    .tip { background: #fff8e1; padding: 0.5rem 0.8rem; border-left: 4px solid #ff9500; margin-top: 0.4rem; border-radius: 5px; font-size: 0.95rem; }
-    .example { background: #e8f5e9; padding: 0.5rem; margin-top: 0.3rem; border-radius: 5px; font-size: 0.95rem; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    th, td { border: 1px solid #ddd; padding: 0.6rem; text-align: center; }
-    th { background: #004d7a; color: white; }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: rgba(0, 77, 122, 0.9);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .navbar nav ul.show {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
@@ -44,109 +54,111 @@
   </nav>
 </header>
 
-<!-- Hero Section -->
+
+<!-- Lesson Article Content -->
 <section class="hero">
-  <h1>Lesson 5: Days, Months & Seasons in Japanese</h1>
-  <p>This lesson is made for beginners — you’ll learn with meaning, pronunciation, memory tricks, and examples.</p>
+  <h1>Lesson 5: Days and Months in French</h1>
+  <p>Learn the names of days and months in French, with tips and examples.</p>
 </section>
 
 <section class="lesson-article">
   <div class="content-wrapper">
 
-    <!-- Days of the Week -->
     <div class="learn-box">
-      <h2>📅 Days of the Week (曜日 – Youbi)</h2>
-      <p>All days end with <b>曜日 (youbi)</b> = "day of the week". The first part is a planet/element name.</p>
+      <h2 class="section-heading">📅 Days of the Week</h2>
       <ul class="number-grid">
-        <li><span class="jp-word">月曜日</span> (げつようび – <span class="romaji">getsuyoubi</span>) – <span class="meaning">Monday</span>
-          <div class="tip">月 = moon → "Moon Day"</div>
-          <div class="example">月曜日に学校へ行きます。– I go to school on Monday.</div>
-        </li>
-        <li><span class="jp-word">火曜日</span> (かようび – <span class="romaji">kayoubi</span>) – <span class="meaning">Tuesday</span>
-          <div class="tip">火 = fire → "Fire Day"</div>
-        </li>
-        <li><span class="jp-word">水曜日</span> (すいようび – <span class="romaji">suiyoubi</span>) – <span class="meaning">Wednesday</span>
-          <div class="tip">水 = water → "Water Day"</div>
-        </li>
-        <li><span class="jp-word">木曜日</span> (もくようび – <span class="romaji">mokuyoubi</span>) – <span class="meaning">Thursday</span>
-          <div class="tip">木 = tree → "Wood Day"</div>
-        </li>
-        <li><span class="jp-word">金曜日</span> (きんようび – <span class="romaji">kinyoubi</span>) – <span class="meaning">Friday</span>
-          <div class="tip">金 = gold → "Gold Day"</div>
-        </li>
-        <li><span class="jp-word">土曜日</span> (どようび – <span class="romaji">doyoubi</span>) – <span class="meaning">Saturday</span>
-          <div class="tip">土 = earth → "Earth Day"</div>
-        </li>
-        <li><span class="jp-word">日曜日</span> (にちようび – <span class="romaji">nichiyoubi</span>) – <span class="meaning">Sunday</span>
-          <div class="tip">日 = sun → "Sun Day"</div>
-        </li>
+        <li><strong>Lundi</strong> (Monday)</li>
+        <li><strong>Mardi</strong> (Tuesday)</li>
+        <li><strong>Mercredi</strong> (Wednesday)</li>
+        <li><strong>Jeudi</strong> (Thursday)</li>
+        <li><strong>Vendredi</strong> (Friday)</li>
+        <li><strong>Samedi</strong> (Saturday)</li>
+        <li><strong>Dimanche</strong> (Sunday)</li>
       </ul>
     </div>
 
-    <!-- Months -->
     <div class="learn-box">
-      <h2>🗓️ Months of the Year (〜月 – ~Gatsu)</h2>
-      <p>Easy rule: Number + 月 (<b>gatsu</b> = month)</p>
-      <table>
-        <tr><th>Month</th><th>Kanji</th><th>Romaji</th><th>Meaning</th></tr>
-        <tr><td>1月</td><td>一月</td><td>ichigatsu</td><td>January</td></tr>
-        <tr><td>2月</td><td>二月</td><td>nigatsu</td><td>February</td></tr>
-        <tr><td>3月</td><td>三月</td><td>sangatsu</td><td>March</td></tr>
-        <tr><td>4月</td><td>四月</td><td>shigatsu</td><td>April</td></tr>
-        <tr><td>5月</td><td>五月</td><td>gogatsu</td><td>May</td></tr>
-        <tr><td>6月</td><td>六月</td><td>rokugatsu</td><td>June</td></tr>
-        <tr><td>7月</td><td>七月</td><td>shichigatsu</td><td>July</td></tr>
-        <tr><td>8月</td><td>八月</td><td>hachigatsu</td><td>August</td></tr>
-        <tr><td>9月</td><td>九月</td><td>kugatsu</td><td>September</td></tr>
-        <tr><td>10月</td><td>十月</td><td>juugatsu</td><td>October</td></tr>
-        <tr><td>11月</td><td>十一月</td><td>juuichigatsu</td><td>November</td></tr>
-        <tr><td>12月</td><td>十二月</td><td>juunigatsu</td><td>December</td></tr>
-      </table>
-    </div>
-
-    <!-- Seasons -->
-    <div class="learn-box">
-      <h2>🌤️ Seasons (季節 – Kisetsu)</h2>
+      <h2 class="section-heading">📆 Months of the Year</h2>
       <ul class="number-grid">
-        <li>春 (はる – haru) – Spring</li>
-        <li>夏 (なつ – natsu) – Summer</li>
-        <li>秋 (あき – aki) – Autumn/Fall</li>
-        <li>冬 (ふゆ – fuyu) – Winter</li>
+        <li><strong>Janvier</strong> (January)</li>
+        <li><strong>Février</strong> (February)</li>
+        <li><strong>Mars</strong> (March)</li>
+        <li><strong>Avril</strong> (April)</li>
+        <li><strong>Mai</strong> (May)</li>
+        <li><strong>Juin</strong> (June)</li>
+        <li><strong>Juillet</strong> (July)</li>
+        <li><strong>Août</strong> (August)</li>
+        <li><strong>Septembre</strong> (September)</li>
+        <li><strong>Octobre</strong> (October)</li>
+        <li><strong>Novembre</strong> (November)</li>
+        <li><strong>Décembre</strong> (December)</li>
       </ul>
     </div>
 
-    <!-- Grammar -->
     <div class="learn-box">
-      <h2>🧠 Grammar – Step by Step</h2>
-      <ol>
-        <li><b>On [day]</b> → Add <code>に</code> after the day  
-          月曜日に行きます。– I go on Monday.</li>
-        <li><b>In [month/season]</b> → Add <code>に</code>  
-          12月に雪が降ります。– It snows in December.</li>
-        <li><b>Every week/day/month</b> → Add <code>毎</code> (mai)  
-          毎週日曜日に買い物します。– I shop every Sunday.</li>
-      </ol>
+      <h2 class="section-heading">📚 Grammar Tips</h2>
+      <ul>
+        <li>Days and months are <strong>not capitalized</strong> in French (unless at the beginning of a sentence).</li>
+        <li>To say “on Monday,” use: <em>le lundi</em> (literally “the Monday”).</li>
+        <li>To talk about a recurring day, use <strong>le</strong> + day: <em>Je vais à l’école le mercredi.</em></li>
+        <li>Use <strong>en</strong> for months: <em>en janvier</em> (in January).</li>
+      </ul>
     </div>
 
-    <!-- Quick Review -->
     <div class="learn-box">
-      <h2>⚡ Quick Review Table</h2>
-      <table>
-        <tr><th>English</th><th>Japanese</th><th>Romaji</th></tr>
-        <tr><td>Monday</td><td>月曜日</td><td>getsuyoubi</td></tr>
-        <tr><td>January</td><td>一月</td><td>ichigatsu</td></tr>
-        <tr><td>Summer</td><td>夏</td><td>natsu</td></tr>
-      </table>
+      <h2 class="section-heading">💬 Talking About Dates</h2>
+
+      <p>
+        <strong>Quel jour sommes-nous ?</strong><br>
+        (What day is it?)<br>
+        📅 <small>“Quel” = what, “jour” = day, “sommes-nous” = are we</small>
+      </p>
+
+      <p>
+        <strong>Nous sommes lundi.</strong><br>
+        (It’s Monday)<br>
+        🗓️ <small>Literally “We are Monday” – how the French say “It’s Monday.”</small>
+      </p>
+
+      <p>
+        <strong>Mon anniversaire est en juillet.</strong><br>
+        (My birthday is in July)<br>
+        🎂 <small>“anniversaire” = birthday, “en” = in</small>
+      </p>
+
+      <p>
+        <strong>Je vais à la plage en août.</strong><br>
+        (I go to the beach in August)<br>
+        🏖️ <small>“plage” = beach, “août” = August</small>
+      </p>
+
+      <p>
+        <strong>L’école commence en septembre.</strong><br>
+        (School starts in September)<br>
+        🏫 <small>“école” = school, “commence” = begins</small>
+      </p>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🧠 Fun Facts</h2>
+      <ul>
+        <li>Most French day names come from Latin and are similar to English or other Romance languages.</li>
+        <li><strong>Mercredi</strong> comes from <em>Mercury</em>, and <strong>Jeudi</strong> from <em>Jupiter</em>!</li>
+        <li>To write the full date in French: <br><em>le 4 août 2025</em> → August 4, 2025</li>
+        <li>French calendars start with Monday (not Sunday) as the first day of the week.</li>
+      </ul>
     </div>
 
   </div>
 </section>
 
-<!-- Bottom Navigation Buttons -->
 <div class="bottom-nav-buttons">
-  <a href="index.html" class="btn nav-btn">← Back to Course List</a>
+  <a href="../french/index.html" class="btn nav-btn">← Back to Course List</a>
   <a href="lesson5.html" class="btn nav-btn">Attempt Quiz →</a>
 </div>
+
+
+<!-- Bottom Navigation Buttons -->
 
 <style>
   .number-grid {
@@ -193,6 +205,8 @@
     }
   }
 </style>
+
+<!-- Footer -->
 <footer>
   <p>© 2025 LingoQuest. All rights reserved.</p>
 </footer>
@@ -201,4 +215,3 @@
 
 </body>
 </html>
-

@@ -1,45 +1,57 @@
 document.addEventListener("DOMContentLoaded", function () {
 const questions = [
   {
-    question: "What is the French word for 'rice'?",
-    options: ["riz", "pain", "fromage", "jus"],
-    answer: "riz",
-    explanation: "'Riz' means 'rice' in French.",
+    question: "What does 'ma maison' mean?",
+    options: ["my car", "my room", "my house", "my dog"],
+    answer: "my house",
+    explanation: "'ma maison' means 'my house' in French.",
   },
   {
-    question: "How do you say 'cheese' in French?",
-    options: ["fromage", "lait", "pomme", "sel"],
-    answer: "fromage",
-    explanation: "'Fromage' means 'cheese' in French.",
+    question: "Which word means 'kitchen' in French?",
+    options: ["chambre", "salon", "cuisine", "maison"],
+    answer: "cuisine",
+    explanation: "'cuisine' means 'kitchen'.",
   },
   {
-    question: "What is 'egg' in French?",
-    options: ["œuf", "eau", "viande", "sucre"],
-    answer: "œuf",
-    explanation: "'Œuf' means 'egg' in French.",
+    question: "What is 'bedroom' in French?",
+    options: ["chambre", "jardin", "toilette", "garage"],
+    answer: "chambre",
+    explanation: "'chambre' means 'bedroom'.",
   },
   {
-    question: "Translate 'The soup is hot.'",
+    question: "What does 'le salon' mean?",
+    options: ["kitchen", "living room", "garage", "bathroom"],
+    answer: "living room",
+    explanation: "'le salon' means 'the living room'.",
+  },
+  {
+    question: "Choose the correct translation for 'the bathroom':",
+    options: ["la chambre", "le jardin", "la salle de bain", "le balcon"],
+    answer: "la salle de bain",
+    explanation: "'la salle de bain' means 'the bathroom'.",
+  },
+  {
+    question: "What does 'jardin' mean?",
+    options: ["garage", "balcony", "garden", "roof"],
+    answer: "garden",
+    explanation: "'jardin' means 'garden'.",
+  },
+  {
+    question: "Which is the French word for 'door'?",
+    options: ["fenêtre", "porte", "mur", "plafond"],
+    answer: "porte",
+    explanation: "'porte' means 'door'.",
+  },
+  {
+    question: "What does 'Il y a trois chambres dans ma maison' mean?",
     options: [
-      "La soupe est chaude.",
-      "Le jus est froid.",
-      "Le fromage est vieux.",
-      "L'eau est propre."
+      "There are three chairs in my house",
+      "There are three bedrooms in my house",
+      "There are three kitchens in my house",
+      "There are three children in my house"
     ],
-    answer: "La soupe est chaude.",
-    explanation: "'La soupe est chaude' means 'The soup is hot.'",
-  },
-  {
-    question: "How do you say 'apple' in French?",
-    options: ["pomme", "banane", "orange", "poire"],
-    answer: "pomme",
-    explanation: "'Pomme' means 'apple' in French.",
-  },
-  {
-    question: "What is the French word for 'juice'?",
-    options: ["jus", "sel", "thé", "beurre"],
-    answer: "jus",
-    explanation: "'Jus' means 'juice' in French.",
+    answer: "There are three bedrooms in my house",
+    explanation: "'Il y a trois chambres dans ma maison' = There are three bedrooms in my house.",
   }
 ];
 

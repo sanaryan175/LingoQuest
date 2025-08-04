@@ -1,64 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
 const questions = [
   {
-    question: "How do you say 'Hello' in French?",
-    options: ["Bonjour", "Merci", "Pardon", "Salut"],
-    answer: "Bonjour",
-    explanation: "'Bonjour' means 'Hello' in French.",
+    question: "What is the French word for 'Bread'?",
+    options: ["Baguette", "Fromage", "Pain", "Lait"],
+    answer: "Pain",
+    explanation: "'Pain' means 'Bread' in French.",
   },
   {
-    question: "What does 'Merci' mean?",
-    options: ["Thank you", "Goodbye", "Please", "Sorry"],
-    answer: "Thank you",
-    explanation: "'Merci' means 'Thank you' in French.",
-  },
-  {
-    question: "What is the French word for 'Please'?",
-    options: ["S'il vous plaît", "Merci", "Salut", "Oui"],
-    answer: "S'il vous plaît",
-    explanation: "'S'il vous plaît' means 'Please' in French.",
-  },
-  {
-    question: "Translate: 'How are you?'",
+    question: "Translate: 'I would like a coffee.'",
     options: [
-      "Comment ça va ?",
-      "Où est la banque ?",
-      "Quel âge as-tu ?",
-      "Tu t'appelles comment ?"
+      "Je voudrais un café.",
+      "J'aime le café.",
+      "Un café, s'il vous plaît.",
+      "Je bois du café."
     ],
-    answer: "Comment ça va ?",
-    explanation: "'Comment ça va ?' means 'How are you?'",
+    answer: "Je voudrais un café.",
+    explanation: "'Je voudrais un café' means 'I would like a coffee.'",
   },
   {
-    question: "What does 'Au revoir' mean?",
-    options: ["Goodbye", "Hello", "Please", "Yes"],
-    answer: "Goodbye",
-    explanation: "'Au revoir' means 'Goodbye' in French.",
+    question: "What does 'Fromage' mean in English?",
+    options: ["Milk", "Fruit", "Cheese", "Bread"],
+    answer: "Cheese",
+    explanation: "'Fromage' means 'Cheese' in French.",
   },
   {
-    question: "How do you say 'Yes' in French?",
-    options: ["Oui", "Non", "Peut-être", "Jamais"],
-    answer: "Oui",
-    explanation: "'Oui' means 'Yes' in French.",
+    question: "How do you say 'Water' in French?",
+    options: ["Eau", "Jus", "Lait", "Vin"],
+    answer: "Eau",
+    explanation: "'Eau' means 'Water' in French.",
   },
   {
-    question: "What is the French word for 'Sorry'?",
-    options: ["Pardon", "Merci", "Salut", "Bonjour"],
-    answer: "Pardon",
-    explanation: "'Pardon' means 'Sorry' or 'Excuse me' in French.",
+    question: "What is 'Apple' in French?",
+    options: ["Pomme", "Poire", "Orange", "Raisin"],
+    answer: "Pomme",
+    explanation: "'Pomme' means 'Apple' in French.",
   },
   {
-    question: "Translate: 'My name is Sophie.'",
+    question: "Translate: 'Do you want some tea?'",
     options: [
-      "Je m'appelle Sophie.",
-      "Tu t'appelles Sophie.",
-      "Elle s'appelle Sophie.",
-      "Je suis Sophie."
+      "Tu veux du thé ?",
+      "Tu bois du thé ?",
+      "Je veux un thé.",
+      "Vous avez du thé ?"
     ],
-    answer: "Je m'appelle Sophie.",
-    explanation: "'Je m'appelle Sophie' means 'My name is Sophie.'",
+    answer: "Tu veux du thé ?",
+    explanation: "'Tu veux du thé ?' means 'Do you want some tea?'",
+  },
+  {
+    question: "What does 'Lait' mean?",
+    options: ["Juice", "Milk", "Coffee", "Water"],
+    answer: "Milk",
+    explanation: "'Lait' means 'Milk' in French.",
+  },
+  {
+    question: "How do you say 'Orange juice' in French?",
+    options: ["Jus d'orange", "Jus de pomme", "Eau minérale", "Vin rouge"],
+    answer: "Jus d'orange",
+    explanation: "'Jus d'orange' means 'Orange juice' in French.",
   }
 ];
+
 
   let xp = parseInt(localStorage.getItem(`xp_lesson8`)) || 0;
   let currentQuestion = parseInt(localStorage.getItem(`currentQuestion_lesson8`)) || 0;

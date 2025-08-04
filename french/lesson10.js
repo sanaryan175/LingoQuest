@@ -1,57 +1,82 @@
 document.addEventListener("DOMContentLoaded", function () {
 const questions = [
   {
-    question: "What is the French word for 'book'?",
-    options: ["livre", "stylo", "chaise", "porte"],
-    answer: "livre",
-    explanation: "'Livre' means 'book' in French.",
+    question: "How do you say 'How are you?' in French?",
+    options: ["Comment ça va ?", "Où vas-tu ?", "Tu veux quoi ?", "Quelle heure est-il ?"],
+    answer: "Comment ça va ?",
+    explanation: "'Comment ça va ?' means 'How are you?' in French.",
   },
   {
-    question: "How do you say 'I am a student' in French?",
-    options: ["Je suis étudiant(e)", "Tu es professeur", "Il est élève", "Nous sommes amis"],
-    answer: "Je suis étudiant(e)",
-    explanation: "'Je suis étudiant(e)' means 'I am a student.'",
-  },
-  {
-    question: "What does 'ils sont' mean?",
-    options: ["They are", "We are", "You are", "He is"],
-    answer: "They are",
-    explanation: "'Ils sont' means 'They are' in French.",
-  },
-  {
-    question: "Choose the correct translation: 'The cat is black.'",
+    question: "Translate: 'My name is Clara.'",
     options: [
-      "Le chat est noir.",
-      "La chatte est blanche.",
-      "Le chien est noir.",
-      "Le chat est grand."
+      "Je m'appelle Clara.",
+      "Tu t'appelles Clara.",
+      "Elle est Clara.",
+      "Je suis Clara."
     ],
-    answer: "Le chat est noir.",
-    explanation: "'Le chat est noir' means 'The cat is black.'",
+    answer: "Je m'appelle Clara.",
+    explanation: "'Je m'appelle Clara' means 'My name is Clara.'",
   },
   {
-    question: "What is the plural of 'fille' (girl)?",
-    options: ["filles", "fillez", "fillee", "filleux"],
-    answer: "filles",
-    explanation: "The plural of 'fille' is 'filles'.",
+    question: "What does 'Où est la gare ?' mean?",
+    options: [
+      "Where is the train station?",
+      "What is your name?",
+      "How much is this?",
+      "When is the train?"
+    ],
+    answer: "Where is the train station?",
+    explanation: "'Où est la gare ?' means 'Where is the train station?'",
   },
   {
-    question: "Which article means 'a' for feminine nouns?",
-    options: ["une", "un", "le", "la"],
-    answer: "une",
-    explanation: "'Une' is used for feminine singular nouns.",
+    question: "How do you say 'I don’t understand' in French?",
+    options: [
+      "Je ne comprends pas.",
+      "Je comprends.",
+      "Tu ne parles pas.",
+      "Je ne sais pas."
+    ],
+    answer: "Je ne comprends pas.",
+    explanation: "'Je ne comprends pas' means 'I don’t understand.'",
   },
   {
-    question: "What does 'Je m'appelle' mean?",
-    options: ["My name is", "I am", "I live", "I speak"],
-    answer: "My name is",
-    explanation: "'Je m'appelle' means 'My name is' in French.",
+    question: "Translate: 'Can you help me, please?'",
+    options: [
+      "Pouvez-vous m’aider, s’il vous plaît ?",
+      "Tu es là, s’il vous plaît ?",
+      "Est-ce que je peux venir ?",
+      "Vous voulez venir, merci ?"
+    ],
+    answer: "Pouvez-vous m’aider, s’il vous plaît ?",
+    explanation: "'Pouvez-vous m’aider, s’il vous plaît ?' means 'Can you help me, please?'",
   },
   {
-    question: "How do you say 'Good night' in French?",
-    options: ["Bonne nuit", "Bon matin", "Bonsoir", "Bonjour"],
-    answer: "Bonne nuit",
-    explanation: "'Bonne nuit' means 'Good night' in French.",
+    question: "What does 'Je suis désolé(e)' mean?",
+    options: ["I am sorry", "I am late", "I am fine", "I am here"],
+    answer: "I am sorry",
+    explanation: "'Je suis désolé(e)' means 'I am sorry' in French.",
+  },
+  {
+    question: "How do you ask 'What time is it?'",
+    options: [
+      "Quelle heure est-il ?",
+      "C’est combien ?",
+      "Où est-ce ?",
+      "Tu es prêt ?"
+    ],
+    answer: "Quelle heure est-il ?",
+    explanation: "'Quelle heure est-il ?' means 'What time is it?'",
+  },
+  {
+    question: "Translate: 'I would like a coffee, please.'",
+    options: [
+      "Je voudrais un café, s’il vous plaît.",
+      "Je mange un café, merci.",
+      "Je bois le café vite.",
+      "Vous avez un café, s’il vous plaît."
+    ],
+    answer: "Je voudrais un café, s’il vous plaît.",
+    explanation: "'Je voudrais un café, s’il vous plaît.' means 'I would like a coffee, please.'",
   }
 ];
 

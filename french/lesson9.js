@@ -1,97 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
 const questions = [
   {
-    question: "What does 'Qui' mean?",
-    options: ["What", "Where", "Who", "Why"],
-    answer: "Who",
-    explanation: "'Qui' means 'Who' in French.",
+    question: "What does 'le nord' mean?",
+    options: ["North", "South", "East", "West"],
+    answer: "North",
+    explanation: "'Le nord' means 'North' in French.",
   },
   {
-    question: "What does 'Où' mean?",
-    options: ["When", "Where", "Why", "How"],
-    answer: "Where",
-    explanation: "'Où' means 'Where'.",
+    question: "Translate: 'The bakery is to the west.'",
+    options: [
+      "La boulangerie est à l’ouest.",
+      "La boulangerie est au nord.",
+      "La boulangerie est à droite.",
+      "La boulangerie est à midi."
+    ],
+    answer: "La boulangerie est à l’ouest.",
+    explanation: "'À l’ouest' means 'to the west'. We use 'à l’' because 'ouest' begins with a vowel.",
   },
   {
-    question: "Which is a personal pronoun?",
-    options: ["le", "je", "chat", "avoir"],
-    answer: "je",
-    explanation: "'je' means 'I' and is a personal pronoun.",
+    question: "What is the French word for 'evening'?",
+    options: ["le soir", "le matin", "la nuit", "le midi"],
+    answer: "le soir",
+    explanation: "'Le soir' means 'evening' in French.",
   },
   {
-    question: "What is the plural of 'chien' (dog)?",
-    options: ["chiens", "chiennes", "chienz", "chienes"],
-    answer: "chiens",
-    explanation: "The plural of 'chien' is 'chiens'.",
+    question: "Which one is feminine?",
+    options: ["la nuit", "le soir", "le matin", "le midi"],
+    answer: "la nuit",
+    explanation: "'La nuit' is the only feminine word among parts of the day listed here.",
   },
   {
-    question: "What does 'tu as' mean?",
-    options: ["You are", "You have", "You go", "You eat"],
-    answer: "You have",
-    explanation: "'tu as' means 'you have'.",
+    question: "What does 'à + le' become in French?",
+    options: ["au", "aux", "à l’", "de"],
+    answer: "au",
+    explanation: "In French, 'à + le' contracts to 'au'. Example: 'au nord' = 'to the north'.",
   },
   {
-    question: "Choose the correct form of 'être' (to be) for 'il':",
-    options: ["es", "suis", "est", "êtes"],
-    answer: "est",
-    explanation: "'Il est' = He is.",
+    question: "Translate: 'I’m going to the north.'",
+    options: [
+      "Je vais au nord.",
+      "Je vais à la nord.",
+      "Je vais en nord.",
+      "Je vais le nord."
+    ],
+    answer: "Je vais au nord.",
+    explanation: "'Je vais au nord' means 'I’m going to the north.' Use 'au' for masculine nouns.",
   },
   {
-    question: "What article goes with 'pomme' (apple)?",
-    options: ["le", "la", "les", "l'"],
-    answer: "la",
-    explanation: "'la pomme' is the correct form (feminine noun).",
+    question: "What does 'en direction de Paris' mean?",
+    options: ["Towards Paris", "Behind Paris", "Outside Paris", "From Paris"],
+    answer: "Towards Paris",
+    explanation: "'En direction de Paris' means 'towards Paris' in French.",
   },
   {
-    question: "Which sentence is grammatically correct?",
-    options: ["Je suis content", "Tu suis content", "Je es content", "Elle es contente"],
-    answer: "Je suis content",
-    explanation: "Correct conjugation: 'Je suis' = I am.",
-  },
-  {
-    question: "Which is the indefinite article for 'fille' (girl)?",
-    options: ["un", "une", "des", "le"],
-    answer: "une",
-    explanation: "'fille' is feminine, so use 'une'.",
-  },
-  {
-    question: "What is 'We have' in French?",
-    options: ["Nous as", "Nous avons", "Nous êtes", "Nous suis"],
-    answer: "Nous avons",
-    explanation: "'Nous avons' means 'We have'.",
-  },
-  {
-    question: "Which verb means 'to be'?",
-    options: ["être", "avoir", "faire", "aller"],
-    answer: "être",
-    explanation: "'être' means 'to be'.",
-  },
-  {
-    question: "What is the plural of 'livre' (book)?",
-    options: ["livres", "livreses", "livrez", "livrens"],
-    answer: "livres",
-    explanation: "The plural of 'livre' is 'livres'.",
-  },
-  {
-    question: "What does 'Pourquoi' mean?",
-    options: ["Where", "How", "Why", "Who"],
-    answer: "Why",
-    explanation: "'Pourquoi' means 'Why'.",
-  },
-  {
-    question: "How do you say 'They are'?",
-    options: ["Ils est", "Ils sont", "Ils êtes", "Ils es"],
-    answer: "Ils sont",
-    explanation: "'Ils sont' = They are.",
-  },
-  {
-    question: "Which is a simple French sentence?",
-    options: ["Chat est noir", "Je mange une pomme", "Mange je pizza", "Bonjour je suis"],
-    answer: "Je mange une pomme",
-    explanation: "'Je mange une pomme' = I am eating an apple.",
-  },
+    question: "Which is a correct greeting for the evening?",
+    options: ["Bonsoir", "Bonjour", "Bonne nuit", "Salut"],
+    answer: "Bonsoir",
+    explanation: "'Bonsoir' is used to greet someone in the evening.",
+  }
 ];
- 
+
   let xp = parseInt(localStorage.getItem(`xp_lesson9`)) || 0;
   let currentQuestion = parseInt(localStorage.getItem(`currentQuestion_lesson9`)) || 0;
   let lives = parseInt(localStorage.getItem(`lives_lesson9`)) || 3;

@@ -1,62 +1,96 @@
 document.addEventListener("DOMContentLoaded", function () {
 const questions = [
   {
-    question: "What is the French word for 'school'?",
-    options: ["école", "hôpital", "gare", "banque"],
-    answer: "école",
-    explanation: "'École' means 'school' in French.",
+    question: "What does 'Qui' mean?",
+    options: ["What", "Where", "Who", "Why"],
+    answer: "Who",
+    explanation: "'Qui' means 'Who' in French.",
   },
   {
-    question: "How do you say 'hospital' in French?",
-    options: ["hôpital", "église", "poste", "mairie"],
-    answer: "hôpital",
-    explanation: "'Hôpital' means 'hospital' in French.",
+    question: "What does 'Où' mean?",
+    options: ["When", "Where", "Why", "How"],
+    answer: "Where",
+    explanation: "'Où' means 'Where'.",
   },
   {
-    question: "What does 'gauche' mean?",
-    options: ["left", "right", "straight", "back"],
-    answer: "left",
-    explanation: "'Gauche' means 'left' in French.",
+    question: "Which is a personal pronoun?",
+    options: ["le", "je", "chat", "avoir"],
+    answer: "je",
+    explanation: "'je' means 'I' and is a personal pronoun.",
   },
   {
-    question: "What is 'right' in French?",
-    options: ["droite", "gauche", "devant", "derrière"],
-    answer: "droite",
-    explanation: "'Droite' means 'right' in French.",
+    question: "What is the plural of 'chien' (dog)?",
+    options: ["chiens", "chiennes", "chienz", "chienes"],
+    answer: "chiens",
+    explanation: "The plural of 'chien' is 'chiens'.",
   },
   {
-    question: "Translate: 'The bank is on the left.'",
-    options: [
-      "La banque est à gauche.",
-      "L'école est à droite.",
-      "Le parc est devant.",
-      "La poste est derrière."
-    ],
-    answer: "La banque est à gauche.",
-    explanation: "'La banque est à gauche' means 'The bank is on the left.'",
+    question: "What does 'tu as' mean?",
+    options: ["You are", "You have", "You go", "You eat"],
+    answer: "You have",
+    explanation: "'tu as' means 'you have'.",
   },
   {
-    question: "What is the French word for 'train station'?",
-    options: ["gare", "hôpital", "école", "boulangerie"],
-    answer: "gare",
-    explanation: "'Gare' means 'train station' in French.",
+    question: "Choose the correct form of 'être' (to be) for 'il':",
+    options: ["es", "suis", "est", "êtes"],
+    answer: "est",
+    explanation: "'Il est' = He is.",
   },
   {
-    question: "What does 'devant' mean?",
-    options: ["in front of", "behind", "next to", "between"],
-    answer: "in front of",
-    explanation: "'Devant' means 'in front of' in French.",
+    question: "What article goes with 'pomme' (apple)?",
+    options: ["le", "la", "les", "l'"],
+    answer: "la",
+    explanation: "'la pomme' is the correct form (feminine noun).",
   },
   {
-    question: "How do you say 'behind' in French?",
-    options: ["derrière", "devant", "à côté", "à droite"],
-    answer: "derrière",
-    explanation: "'Derrière' means 'behind' in French.",
-  }
+    question: "Which sentence is grammatically correct?",
+    options: ["Je suis content", "Tu suis content", "Je es content", "Elle es contente"],
+    answer: "Je suis content",
+    explanation: "Correct conjugation: 'Je suis' = I am.",
+  },
+  {
+    question: "Which is the indefinite article for 'fille' (girl)?",
+    options: ["un", "une", "des", "le"],
+    answer: "une",
+    explanation: "'fille' is feminine, so use 'une'.",
+  },
+  {
+    question: "What is 'We have' in French?",
+    options: ["Nous as", "Nous avons", "Nous êtes", "Nous suis"],
+    answer: "Nous avons",
+    explanation: "'Nous avons' means 'We have'.",
+  },
+  {
+    question: "Which verb means 'to be'?",
+    options: ["être", "avoir", "faire", "aller"],
+    answer: "être",
+    explanation: "'être' means 'to be'.",
+  },
+  {
+    question: "What is the plural of 'livre' (book)?",
+    options: ["livres", "livreses", "livrez", "livrens"],
+    answer: "livres",
+    explanation: "The plural of 'livre' is 'livres'.",
+  },
+  {
+    question: "What does 'Pourquoi' mean?",
+    options: ["Where", "How", "Why", "Who"],
+    answer: "Why",
+    explanation: "'Pourquoi' means 'Why'.",
+  },
+  {
+    question: "How do you say 'They are'?",
+    options: ["Ils est", "Ils sont", "Ils êtes", "Ils es"],
+    answer: "Ils sont",
+    explanation: "'Ils sont' = They are.",
+  },
+  {
+    question: "Which is a simple French sentence?",
+    options: ["Chat est noir", "Je mange une pomme", "Mange je pizza", "Bonjour je suis"],
+    answer: "Je mange une pomme",
+    explanation: "'Je mange une pomme' = I am eating an apple.",
+  },
 ];
-
-
-
  
   let xp = parseInt(localStorage.getItem(`xp_lesson6`)) || 0;
   let currentQuestion = parseInt(localStorage.getItem(`currentQuestion_lesson6`)) || 0;
