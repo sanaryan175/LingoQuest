@@ -46,7 +46,6 @@ lingoquest/
 - HTML, CSS, JavaScript
 - GitHub Pages (for deployment)
 - [Google Fonts](https://fonts.google.com/)
-- [FontAwesome](https://fontawesome.com/) (icons)
 - [Confetti.js](https://www.cssscript.com/confetti-falling-animation/) (for celebration effects)
 
 ---
