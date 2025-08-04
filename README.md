@@ -51,6 +51,7 @@ lingoquest/
 ---
 
 🙌 Acknowledgments
+
 Designed and developed by Sanskriti Gupta and Jainam Dudhediya
 
 Inspired by apps like Duolingo, LingQ, and Memrise
