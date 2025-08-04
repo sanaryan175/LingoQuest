@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       explanation: "'Gute Nacht' means Good night.",
     },
     {
-      question: "What is 'Goodbye' in German?",
+      question: "What is 'Bye' in German?",
       options: ["Bitte", "Tschüss", "Hallo", "Guten Abend"],
       answer: "Tschüss",
       explanation: "'Tschüss' means Goodbye.",

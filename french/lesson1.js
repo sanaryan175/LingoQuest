@@ -13,7 +13,7 @@ const questions = [
     explanation: "'Merci' means Thank you in French."
   },
   {
-    question: "What is 'Goodbye' in French?",
+    question: "What is 'Good Bye' in French?",
     options: ["Bonsoir", "Salut", "Merci", "Au revoir"],
     answer: "Au revoir",
     explanation: "'Au revoir' is the standard way to say Goodbye in French."
