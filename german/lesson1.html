@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Lesson 1: Greetings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 1 – German Greetings</title>
 
   <!-- Fonts + Confetti -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
   <!-- CSS -->
@@ -17,11 +16,9 @@
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.2); }
     }
-
     .bounce {
       animation: bounce 0.4s ease;
     }
-
     #sadEmoji {
       transition: all 0.6s ease;
       position: absolute;
@@ -36,7 +33,6 @@
     }
   </style>
 </head>
-
 <body>
 
   <!-- Sad Emoji Visual Effect -->
@@ -44,7 +40,8 @@
 
   <!-- Main Game Container -->
   <div class="card" id="gameContainer">
-    <h2>🇩🇪 Lesson 1: Greetings</h2>
+    <h2>🇩🇪 Lesson 1 – German Greetings</h2>
+
     <div class="xp">⭐ XP: <span id="xp">0</span></div>
     <div class="lives">❤️ Lives: <span id="lives">3</span></div>
 
@@ -58,12 +55,12 @@
       <div id="xpBar"></div>
     </div>
 
-    <!-- Buttons row -->
+    <!-- Buttons Row -->
     <div class="buttons-row">
       <button id="skipBtn">⏭ Skip</button>
       <div class="right-buttons">
         <button id="checkBtn">✔ Check</button>
-        <button id="continueBtn" style="display: none;">➡ Continue</button>
+        <button id="continueBtn" style="display:none;">➡ Continue</button>
       </div>
     </div>
   </div>
@@ -96,7 +93,7 @@
       <h2>💔 You Lost the Game!</h2>
       <p>Don't worry! Try again and improve.</p>
       <div class="popup-content-buttons">
-        <button onclick="restartLesson()">🔁 Restart</button>
+        <button onclick="restartQuiz()">🔁 Restart</button>
       </div>
     </div>
   </div>
@@ -107,7 +104,7 @@
   <audio id="loseSound" src="../assets/sound/lose.mp3" preload="auto"></audio>
   <audio id="victorySound" src="../assets/sound/victory.mp3" preload="auto"></audio>
 
-  <!-- JS Logic -->
+  <!-- JavaScript Logic -->
   <script src="lesson1.js"></script>
 
 </body>

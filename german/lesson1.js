@@ -1,18 +1,47 @@
 document.addEventListener("DOMContentLoaded", function () {
   const questions = [
-    { question: "What is 'Hello' in German?", options: ["Hallo", "Tschüss", "Bitte", "Danke"], answer: "Hallo", explanation: "'Hallo' means Hello in German." },
-    { question: "How do you say 'Thank you'?", options: ["Bitte", "Hallo", "Danke", "Nein"], answer: "Danke", explanation: "'Danke' means Thank you in German." },
-    { question: "What is 'Bye' in German?", options: ["Guten Morgen", "Tschüss", "Ja", "Willkommen"], answer: "Tschüss", explanation: "'Tschüss' is commonly used for Goodbye." },
-    { question: "What does 'Guten Morgen' mean?", options: ["Good Night", "Good Morning", "How are you?", "Goodbye"], answer: "Good Morning", explanation: "'Guten Morgen' means Good Morning." },
-    { question: "Translate 'Yes' in German.", options: ["Nein", "Ja", "Bitte", "Guten Tag"], answer: "Ja", explanation: "'Ja' means Yes." },
-    { question: "How do you say 'Please'?", options: ["Danke", "Willkommen", "Bitte", "Hallo"], answer: "Bitte", explanation: "'Bitte' means Please or You're welcome." }
+    {
+      question: "What is 'Hello' in German?",
+      options: ["Danke", "Hallo", "Tschüss", "Guten Morgen"],
+      answer: "Hallo",
+      explanation: "'Hallo' means Hello.",
+    },
+    {
+      question: "Translate 'Good morning' into German.",
+      options: ["Guten Morgen", "Guten Abend", "Hallo", "Gute Nacht"],
+      answer: "Guten Morgen",
+      explanation: "'Guten Morgen' means Good morning.",
+    },
+    {
+      question: "What does 'Guten Abend' mean?",
+      options: ["Good night", "Goodbye", "Good evening", "Hello"],
+      answer: "Good evening",
+      explanation: "'Guten Abend' means Good evening.",
+    },
+    {
+      question: "Translate 'Good night' into German.",
+      options: ["Gute Nacht", "Guten Tag", "Guten Abend", "Tschüss"],
+      answer: "Gute Nacht",
+      explanation: "'Gute Nacht' means Good night.",
+    },
+    {
+      question: "What is 'Goodbye' in German?",
+      options: ["Bitte", "Tschüss", "Hallo", "Guten Abend"],
+      answer: "Tschüss",
+      explanation: "'Tschüss' means Goodbye.",
+    },
+    {
+      question: "What is 'Thank you' in German?",
+      options: ["Danke", "Bitte", "Hallo", "Tschüss"],
+      answer: "Danke",
+      explanation: "'Danke' means Thank you.",
+    },
   ];
 
-
-  let xp = parseInt(localStorage.getItem("xpLesson1")) || 0;
-  let currentQuestion = parseInt(localStorage.getItem("currentQuestionLesson1")) || 0;
-  let lives = parseInt(localStorage.getItem("livesLesson1")) || 3;
-  let quizPassed = localStorage.getItem("quizPassedLesson1") === "true";
+  let xp = parseInt(localStorage.getItem(`xp_lesson1`)) || 0;
+  let currentQuestion = parseInt(localStorage.getItem(`currentQuestion_lesson1`)) || 0;
+  let lives = parseInt(localStorage.getItem(`lives_lesson1`)) || 3;
+  let quizPassed = localStorage.getItem(`quizPassed_lesson1`) === "true";
 
   const questionElem = document.getElementById("question");
   const optionsElem = document.getElementById("options");
@@ -41,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let waiting = false;
   let selectedOption = null;
   let selectedBtn = null;
-
   const skipPenalty = false;
 
   if (quizPassed) {
@@ -74,9 +102,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function saveProgress() {
-    localStorage.setItem("xpLesson1", xp);
-    localStorage.setItem("currentQuestionLesson1", currentQuestion);
-    localStorage.setItem("livesLesson1", lives);
+    localStorage.setItem(`xp_lesson1`, xp);
+    localStorage.setItem(`currentQuestion_lesson1`, currentQuestion);
+    localStorage.setItem(`lives_lesson1`, lives);
   }
 
   function showSVGReaction(type) {
@@ -150,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => gameOverPopup.style.display = "flex", 800);
     } else if (currentQuestion === questions.length - 1) {
       hideControlButtons();
-      localStorage.setItem("quizPassedLesson1", "true");
+      localStorage.setItem(`quizPassed_lesson1`, "true");
       setTimeout(() => {
         popupFinalXP.innerText = xp;
         victoryPopup.style.display = "flex";
@@ -210,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
     currentQuestion++;
     if (currentQuestion >= questions.length) {
       hideControlButtons();
-      localStorage.setItem("quizPassedLesson1", "true");
+      localStorage.setItem(`quizPassed_lesson1`, "true");
       popupFinalXP.innerText = xp;
       victoryPopup.style.display = "flex";
       confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
@@ -237,17 +265,17 @@ document.addEventListener("DOMContentLoaded", function () {
   loadQuestion();
 });
 
-// Global controls
+// 🔄 Global Controls
 function restartLesson() {
-  localStorage.removeItem("xpLesson1");
-  localStorage.removeItem("currentQuestionLesson1");
-  localStorage.removeItem("livesLesson1");
-  localStorage.removeItem("quizPassedLesson1");
+  localStorage.removeItem(`xp_lesson1`);
+  localStorage.removeItem(`currentQuestion_lesson1`);
+  localStorage.removeItem(`lives_lesson1`);
+  localStorage.removeItem(`quizPassed_lesson1`);
   location.reload();
 }
 
 function goToNextLesson() {
-  window.location.href = "lesson2_article.html"; // Adjust if needed
+  window.location.href = "lesson2_article.html";
 }
 
 function returnToCourseList() {
@@ -257,8 +285,6 @@ function returnToCourseList() {
 function restartQuiz() {
   restartLesson();
 }
-
-
 
 
 
