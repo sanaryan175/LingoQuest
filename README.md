@@ -1,6 +1,6 @@
 # 🌍 LingoQuest
 
-LingoQuest is an interactive, beginner-friendly language learning web app that helps users learn new languages like **German**, **Spanish**, **French**, and **Hindi** through engaging lessons, quizzes, and visual/audio feedback.
+LingoQuest is an interactive, beginner-friendly language learning web app that helps users learn new languages like **German**, **French**, and **Hindi** through engaging lessons, quizzes, and visual/audio feedback.
 
 ## 🔗 Live Demo
 Visit the website here: [LingoQuest on GitHub Pages](https://sanaryan175.github.io/LingoQuest/)
@@ -52,7 +52,7 @@ lingoquest/
 
 🙌 Acknowledgments
 
-Designed and developed by Sanskriti Gupta and Jainam Dudhediya
+Designed and developed by  [Sanskriti Gupta](https://github.com/sanaryan175)and Jainam Dudhediya
 
 Inspired by apps like Duolingo, LingQ, and Memrise
 
