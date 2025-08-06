@@ -13,7 +13,7 @@ Visit the website here: [LingoQuest on GitHub Pages](https://sanaryan175.github.
 -  Modern Glass UI with a responsive design
 -  Language support: German and French (with Spanish and Hindi coming soon)
 - Visual and audio cues to reinforce learning
-- Lesson types: MCQs, fill-in-the-blanks, drag-and-drop
+- Lesson types: MCQs, fill-in-the-blanks, lesson-wise interactive articles
 -  No login required – just start learning!
 
 ---
