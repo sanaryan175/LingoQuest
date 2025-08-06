@@ -22,21 +22,36 @@ Visit the website here: [LingoQuest on GitHub Pages](https://sanaryan175.github.
 
 lingoquest/
 ├── index.html # Homepage
+
 ├── courses/
+
 │ ├── german.html # German course overview
-│ ├── spanish.html # Spanish course overview
+
+│ ├── french.html # French course overview
+
 │ ├── hindi.html # Hindi course overview
+
 ├── lessons/
 │ ├── lesson1_article.html # German lesson article
+
 │ ├── lesson1.html # German quiz game
+
 │ └── ... # More lessons
+
 ├── css/
+
 │ └── style.css # Custom styles (Glass UI, theme colors)
+
 ├── js/
+
 │ ├── lesson1.js # JavaScript for quiz logic
+
 │ └── ... # Other lesson scripts
+
 └── assets/
+
 ├── images/ # Illustrations, icons, background images
+
 └── audio/ # Pronunciations, sound effects
 
 ---
