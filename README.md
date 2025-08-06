@@ -11,7 +11,7 @@ Visit the website here: [LingoQuest on GitHub Pages](https://sanaryan175.github.
 
 - Interactive lessons and quizzes with XP and hearts system
 -  Modern Glass UI with a responsive design
--  Language support: German (with Spanish, Hindi, and French coming soon)
+-  Language support: German and French (with Spanish and Hindi coming soon)
 - Visual and audio cues to reinforce learning
 - Lesson types: MCQs, fill-in-the-blanks, drag-and-drop
 -  No login required – just start learning!
