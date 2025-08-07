@@ -6,6 +6,36 @@
   <title>Lesson 5 – Days, Months & Seasons | LingoQuest</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: rgba(0, 77, 122, 0.9);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .navbar nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +46,7 @@
   <nav>
     <ul id="navLinks">
       <li><a href="../index.html">Home</a></li>
-       <li><a href="../courses.html">Courses</a></li>
+      <li><a href="../courses.html">Courses</a></li>
       <li><a href="../about.html">About</a></li>
       <li><a href="../gallery.html">Gallery</a></li>
       <li><a href="../career.html">Career</a></li>
@@ -27,8 +57,8 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Lesson 5: Days, Months & Seasons in French</h1>
-  <p>Let's learn how to talk about time, months, and weather in French — step by step!</p>
+  <h1>Lesson 5: Days, Months & Seasons in German</h1>
+  <p>Master the German words for days of the week, months of the year, and the four seasons!</p>
 </section>
 
 <!-- Lesson Article Content -->
@@ -36,102 +66,91 @@
   <div class="content-wrapper">
 
     <div class="learn-box">
-      <h2 class="section-heading">📅 Days of the Week (Les jours de la semaine)</h2>
-      <p>Let’s learn the 7 days of the week in French:</p>
-      <ul>
-        <li><strong>Lundi</strong> (loon-dee) – Monday</li>
-        <li><strong>Mardi</strong> (mar-dee) – Tuesday</li>
-        <li><strong>Mercredi</strong> (mehr-kruh-dee) – Wednesday</li>
-        <li><strong>Jeudi</strong> (zhuh-dee) – Thursday</li>
-        <li><strong>Vendredi</strong> (von-druh-dee) – Friday</li>
-        <li><strong>Samedi</strong> (sam-dee) – Saturday</li>
-        <li><strong>Dimanche</strong> (dee-mohnsh) – Sunday</li>
-      </ul>
-      <p><strong>Note:</strong> In French, day names are written with lowercase letters.</p>
-    </div>
-
-    <div class="learn-box">
-      <h2 class="section-heading">🗓️ Months of the Year (Les mois de l’année)</h2>
-      <p>Here are the 12 months of the year:</p>
-      <ul>
-        <li><strong>Janvier</strong> (zhahn-vyay) – January</li>
-        <li><strong>Février</strong> (fay-vree-yay) – February</li>
-        <li><strong>Mars</strong> (mars) – March</li>
-        <li><strong>Avril</strong> (ah-vreel) – April</li>
-        <li><strong>Mai</strong> (meh) – May</li>
-        <li><strong>Juin</strong> (zhu-ahn) – June</li>
-        <li><strong>Juillet</strong> (zwee-yay) – July</li>
-        <li><strong>Août</strong> (oot) – August</li>
-        <li><strong>Septembre</strong> (sep-tahm-br) – September</li>
-        <li><strong>Octobre</strong> (ok-toh-br) – October</li>
-        <li><strong>Novembre</strong> (noh-vahm-br) – November</li>
-        <li><strong>Décembre</strong> (day-sahm-br) – December</li>
+      <h2 class="section-heading">📅 Days of the Week (Wochentage)</h2>
+      <ul class="number-grid">
+        <li><strong>Montag</strong> – Monday</li>
+        <li><strong>Dienstag</strong> – Tuesday</li>
+        <li><strong>Mittwoch</strong> – Wednesday</li>
+        <li><strong>Donnerstag</strong> – Thursday</li>
+        <li><strong>Freitag</strong> – Friday</li>
+        <li><strong>Samstag</strong> – Saturday</li>
+        <li><strong>Sonntag</strong> – Sunday</li>
       </ul>
     </div>
 
     <div class="learn-box">
-      <h2 class="section-heading">🌤️ Seasons in French (Les saisons)</h2>
-      <p>France has four seasons, just like most places:</p>
-      <ul>
-        <li><strong>Le printemps</strong> (luh prahn-tahn) – Spring</li>
-        <li><strong>L’été</strong> (lay-tay) – Summer</li>
-        <li><strong>L’automne</strong> (loh-ton) – Autumn/Fall</li>
-        <li><strong>L’hiver</strong> (lee-vehr) – Winter</li>
+      <h2 class="section-heading">🗓️ Months of the Year (Monate)</h2>
+      <ul class="number-grid">
+        <li><strong>Januar</strong> – January</li>
+        <li><strong>Februar</strong> – February</li>
+        <li><strong>März</strong> – March</li>
+        <li><strong>April</strong> – April</li>
+        <li><strong>Mai</strong> – May</li>
+        <li><strong>Juni</strong> – June</li>
+        <li><strong>Juli</strong> – July</li>
+        <li><strong>August</strong> – August</li>
+        <li><strong>September</strong> – September</li>
+        <li><strong>Oktober</strong> – October</li>
+        <li><strong>November</strong> – November</li>
+        <li><strong>Dezember</strong> – December</li>
       </ul>
     </div>
 
     <div class="learn-box">
-      <h2 class="section-heading">💡 How to Use Them in Sentences</h2>
-      <ul>
-        <li>
-          <strong>1. Le lundi, je vais à l’école.</strong><br>
-          (On Monday, I go to school.)<br>
-          ➤ <em>le</em> = the, <em>lundi</em> = Monday, <em>je vais</em> = I go, <em>à l’école</em> = to school
-        </li>
-        <li>
-          <strong>2. Mon anniversaire est en août.</strong><br>
-          (My birthday is in August.)<br>
-          ➤ <em>mon anniversaire</em> = my birthday, <em>est</em> = is, <em>en août</em> = in August
-        </li>
-        <li>
-          <strong>3. Il fait chaud en été.</strong><br>
-          (It is hot in summer.)<br>
-          ➤ <em>il fait chaud</em> = it is hot, <em>en été</em> = in summer
-        </li>
-        <li>
-          <strong>4. Il fait froid en hiver.</strong><br>
-          (It is cold in winter.)<br>
-          ➤ <em>il fait froid</em> = it is cold, <em>en hiver</em> = in winter
-        </li>
+      <h2 class="section-heading">🌤️ Seasons (Jahreszeiten)</h2>
+      <ul class="number-grid">
+        <li><strong>der Frühling</strong> – Spring</li>
+        <li><strong>der Sommer</strong> – Summer</li>
+        <li><strong>der Herbst</strong> – Autumn / Fall</li>
+        <li><strong>der Winter</strong> – Winter</li>
       </ul>
     </div>
 
     <div class="learn-box">
-      <h2 class="section-heading">📚 Grammar Tips</h2>
-      <ul>
-        <li><strong>“On Monday” = Le lundi</strong> (Use <em>le</em> before day name)</li>
-        <li><strong>“In August” = En août</strong> (Use <em>en</em> before month)</li>
-        <li><strong>“Every Tuesday” = Tous les mardis</strong></li>
-      </ul>
+      <h2 class="section-heading">💬 Usage in Context</h2>
+      <p>
+        <strong>Heute ist Montag.</strong><br>
+        <em>Today is Monday.</em><br>
+        🗓️ <small>“Heute” = today</small>
+      </p>
+
+      <p>
+        <strong>Mein Geburtstag ist im Juli.</strong><br>
+        <em>My birthday is in July.</em><br>
+        🎉 <small>“im” is used for months and seasons → “im Juli”, “im Sommer”</small>
+      </p>
+
+      <p>
+        <strong>Im Herbst sind die Blätter bunt.</strong><br>
+        <em>In autumn, the leaves are colorful.</em><br>
+        🍂 <small>“bunt” = colorful, “Blätter” = leaves</small>
+      </p>
+
+      <p>
+        <strong>Wir fahren im Winter in die Berge.</strong><br>
+        <em>We go to the mountains in winter.</em><br>
+        🏔️ <small>“fahren” = travel/go by vehicle, “Berge” = mountains</small>
+      </p>
     </div>
 
     <div class="learn-box">
-      <h2 class="section-heading">🧠 Fun Facts!</h2>
+      <h2 class="section-heading">🧠 Did You Know?</h2>
       <ul>
-        <li>📆 In French calendars, the week starts with Monday (<strong>lundi</strong>).</li>
-        <li>❄️ Winter = <strong>l’hiver</strong> — “le” + “hiver” becomes “l’hiver”.</li>
-        <li>🗓️ French months are never capitalized unless at the beginning of a sentence.</li>
+        <li>Days and months are **not** capitalized in English, but they **are** in German!</li>
+        <li>All seasons in German are masculine nouns → **der** Frühling, Sommer, Herbst, Winter.</li>
+        <li>The preposition “<strong>im</strong>” is short for “in dem” and is used with months and seasons.</li>
       </ul>
     </div>
 
   </div>
 </section>
 
-<!-- Navigation -->
+<!-- Bottom Navigation Buttons -->
 <div class="bottom-nav-buttons">
-  <a href="../french/index.html" class="btn nav-btn">← Back to Course List</a>
-  <a href="lesson5.html" class="btn nav-btn">Start Quiz →</a>
+  <a href="../german/index.html" class="btn nav-btn">← Back to Course List</a>
+  <a href="lesson5.html" class="btn nav-btn">Attempt Quiz →</a>
 </div>
+
 <style>
   .number-grid {
     display: grid;
@@ -177,6 +196,7 @@
     }
   }
 </style>
+
 <!-- Footer -->
 <footer>
   <p>© 2025 LingoQuest. All rights reserved.</p>
@@ -186,4 +206,5 @@
 
 </body>
 </html>
+
 
