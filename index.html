@@ -195,12 +195,142 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Welcome to LingoQuest</h1>
-    <p>From basics to fluent – German, French & Hindi made simple.</p>
-    <a href="courses.html" class="btn">Explore Courses</a>
-  </section>
+<style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, Arial, sans-serif; }
+    .hero-slider { position: relative; overflow: hidden; height: 450px; }
+    .slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transform: scale(1.05);
+      transition: opacity 800ms ease, transform 800ms ease;
+      z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .slide.active { opacity: 1; transform: scale(1); z-index: 2; }
+    .overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.45);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: #fff; text-align: center; padding: 20px;
+    }
+    /* Bigger heading */
+    .overlay h1 { font-size: 3rem; margin: 0 0 8px; }
+    /* Bigger paragraph */
+    .overlay p { margin: 0 0 18px; font-size: 1.4rem; }
+    /* Bigger button */
+    .btn {
+      background: #ff9500; color: #fff; padding: 14px 28px;
+      border-radius: 25px; text-decoration: none; font-weight: 700;
+      font-size: 1.1rem;
+      transition: background .2s ease;
+    }
+    .btn:hover { background: #e28500; }
+    .dots {
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 8px; z-index: 5;
+    }
+    .dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: rgba(255,255,255,0.6); cursor: pointer; border: none;
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+    .dot:hover { transform: scale(1.2); background: rgba(255,255,255,0.8); }
+    .dot.active { background: #ff9500; transform: scale(1.3); }
+
+    /* small responsive */
+    @media (max-width:640px){
+      .overlay h1 { font-size: 2rem; }
+      .overlay p { font-size: 1.2rem; }
+      .btn { font-size: 1rem; padding: 12px 26px; }
+    }
+</style>
+
+<section class="hero-slider" id="heroSlider">
+  <div class="slide active" style="background-image:url('assets/images/hero-bg.jpg')" data-slide-index="0">
+    <div class="overlay">
+      <h1>Welcome to LingoQuest</h1>
+      <p>From basics to fluent – German, French & Hindi made simple.</p>
+      <a class="btn" href="courses.html">Explore Courses</a>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('assets/images/hero2.jpg')" data-slide-index="1">
+    <div class="overlay">
+      <h1>Our Journey in Moments</h1>
+      <p>Get insights of our website and its memories with the community.</p>
+      <a class="btn" href="gallery.html">Know More</a>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('assets/images/hero3.jpg')" data-slide-index="2">
+    <div class="overlay">
+      <h1>Join Our Global Community</h1>
+      <p>Connect with learners worldwide and practice daily.</p>
+      <a class="btn" href="contact.html">Get Started</a>
+    </div>
+  </div>
+
+  <div class="dots" id="dotsContainer"></div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.getElementById('heroSlider');
+  const slides = Array.from(slider.querySelectorAll('.slide'));
+  const dotsContainer = document.getElementById('dotsContainer');
+
+  // Create dots dynamically
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.dataset.index = i;
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsContainer.querySelectorAll('.dot'));
+  let current = 0;
+  let interval = setInterval(nextSlide, 4000); // 4 seconds
+
+  function showSlide(index) {
+    slides.forEach((sl, i) => sl.classList.toggle('active', i === index));
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    current = index;
+  }
+
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
+
+  function goTo(index) {
+    showSlide(index);
+    resetInterval();
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 4000);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => goTo(Number(dot.dataset.index)));
+    dot.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        goTo(Number(dot.dataset.index));
+      }
+    });
+  });
+
+  // Pause on hover/focus
+  slider.addEventListener('mouseenter', () => clearInterval(interval));
+  slider.addEventListener('mouseleave', resetInterval);
+  slider.addEventListener('focusin', () => clearInterval(interval));
+  slider.addEventListener('focusout', resetInterval);
+});
+</script>
+
+
+  
 
   <!-- About Us -->
   <section class="course-hero">
