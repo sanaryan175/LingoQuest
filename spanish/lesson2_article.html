@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 2 – Numbers | LingoQuest</title>
+  <meta name="description" content="Learn Spanish numbers from 0 to 25, milestone numbers, grammar rules, and practical usage examples in LingoQuest Lesson 2." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: rgba(0, 77, 122, 0.9);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .navbar nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">LingoQuest</div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav>
+    <ul id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../courses.html">Courses</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../career.html">Career</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Lesson 2: Numbers in Spanish</h1>
+  <p>Learn how to count, use, and recognize numbers in real-life Spanish communication.</p>
+</section>
+
+<!-- Lesson Article Content -->
+<section class="lesson-article">
+  <div class="content-wrapper">
+
+    <div class="learn-box">
+      <h2 class="section-heading">🔢 Numbers from 0 to 25</h2>
+      <ul>
+        <li><strong>0</strong> – Cero <button class="speaker-btn" data-word="Cero">🔊</button></li>
+        <li><strong>1</strong> – Uno <button class="speaker-btn" data-word="Uno">🔊</button></li>
+        <li><strong>2</strong> – Dos <button class="speaker-btn" data-word="Dos">🔊</button></li>
+        <li><strong>3</strong> – Tres <button class="speaker-btn" data-word="Tres">🔊</button></li>
+        <li><strong>4</strong> – Cuatro <button class="speaker-btn" data-word="Cuatro">🔊</button></li>
+        <li><strong>5</strong> – Cinco <button class="speaker-btn" data-word="Cinco">🔊</button></li>
+        <li><strong>6</strong> – Seis <button class="speaker-btn" data-word="Seis">🔊</button></li>
+        <li><strong>7</strong> – Siete <button class="speaker-btn" data-word="Siete">🔊</button></li>
+        <li><strong>8</strong> – Ocho <button class="speaker-btn" data-word="Ocho">🔊</button></li>
+        <li><strong>9</strong> – Nueve <button class="speaker-btn" data-word="Nueve">🔊</button></li>
+        <li><strong>10</strong> – Diez <button class="speaker-btn" data-word="Diez">🔊</button></li>
+        <li><strong>11</strong> – Once <button class="speaker-btn" data-word="Once">🔊</button></li>
+        <li><strong>12</strong> – Doce <button class="speaker-btn" data-word="Doce">🔊</button></li>
+        <li><strong>13</strong> – Trece <button class="speaker-btn" data-word="Trece">🔊</button></li>
+        <li><strong>14</strong> – Catorce <button class="speaker-btn" data-word="Catorce">🔊</button></li>
+        <li><strong>15</strong> – Quince <button class="speaker-btn" data-word="Quince">🔊</button></li>
+        <li><strong>16</strong> – Dieciséis <button class="speaker-btn" data-word="Dieciséis">🔊</button></li>
+        <li><strong>17</strong> – Diecisiete <button class="speaker-btn" data-word="Diecisiete">🔊</button></li>
+        <li><strong>18</strong> – Dieciocho <button class="speaker-btn" data-word="Dieciocho">🔊</button></li>
+        <li><strong>19</strong> – Diecinueve <button class="speaker-btn" data-word="Diecinueve">🔊</button></li>
+        <li><strong>20</strong> – Veinte <button class="speaker-btn" data-word="Veinte">🔊</button></li>
+        <li><strong>21</strong> – Veintiuno <button class="speaker-btn" data-word="Veintiuno">🔊</button></li>
+        <li><strong>22</strong> – Veintidós <button class="speaker-btn" data-word="Veintidós">🔊</button></li>
+        <li><strong>23</strong> – Veintitrés <button class="speaker-btn" data-word="Veintitrés">🔊</button></li>
+        <li><strong>24</strong> – Veinticuatro <button class="speaker-btn" data-word="Veinticuatro">🔊</button></li>
+        <li><strong>25</strong> – Veinticinco <button class="speaker-btn" data-word="Veinticinco">🔊</button></li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🎯 Milestone Numbers</h2>
+      <ul>
+        <li><strong>30</strong> – Treinta <button class="speaker-btn" data-word="Treinta">🔊</button></li>
+        <li><strong>40</strong> – Cuarenta <button class="speaker-btn" data-word="Cuarenta">🔊</button></li>
+        <li><strong>50</strong> – Cincuenta <button class="speaker-btn" data-word="Cincuenta">🔊</button></li>
+        <li><strong>100</strong> – Cien <button class="speaker-btn" data-word="Cien">🔊</button></li>
+        <li><strong>1000</strong> – Mil <button class="speaker-btn" data-word="Mil">🔊</button></li>
+        <li><strong>10,000</strong> – Diez mil <button class="speaker-btn" data-word="Diez mil">🔊</button></li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">💡 Grammar & Number Patterns</h2>
+      <ul>
+        <li>
+          In Spanish, numbers from 16–19 are formed by combining “diez” (10) + y + number, but written together:
+          <strong>dieciséis</strong> = 16.
+        </li>
+        <li>
+          From 21–29, “veinte” changes to “veinti” and is followed by the number: 
+          <strong>veintidós</strong> = 22.
+        </li>
+        <li>
+          Numbers are separate words after 30: 
+          <strong>treinta y cinco</strong> = 35.
+        </li>
+        <li>
+          100 is “cien” by itself, but “ciento” before another number:
+          <strong>ciento uno</strong> = 101.
+        </li>
+      </ul>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">📘 Usage in Context</h2>
+      <p>
+        <strong>Tengo <mark>quince</mark> años.</strong>
+        <button class="speaker-btn" data-word="Tengo quince años.">🔊</button><br>
+        <em>I am <mark>15</mark> years old.</em>
+      </p>
+      <p>
+        <strong>Cuesta <mark>treinta</mark> euros.</strong>
+        <button class="speaker-btn" data-word="Cuesta treinta euros.">🔊</button><br>
+        <em>It costs <mark>30</mark> euros.</em>
+      </p>
+      <p>
+        <strong>Mi casa tiene <mark>cien</mark> ventanas.</strong>
+        <button class="speaker-btn" data-word="Mi casa tiene cien ventanas.">🔊</button><br>
+        <em>My house has <mark>100</mark> windows.</em>
+      </p>
+      <p>
+        <strong>Vive en el cuarto <mark>veintidós</mark>.</strong>
+        <button class="speaker-btn" data-word="Vive en el cuarto veintidós.">🔊</button><br>
+        <em>He/She lives in room <mark>22</mark>.</em>
+      </p>
+      <p>
+        <strong>Tiene más de <mark>diez mil</mark> seguidores.</strong>
+        <button class="speaker-btn" data-word="Tiene más de diez mil seguidores.">🔊</button><br>
+        <em>He/She has over <mark>10,000</mark> followers.</em>
+      </p>
+    </div>
+
+    <div class="learn-box">
+      <h2 class="section-heading">🧠 Did You Know?</h2>
+      <ul>
+        <li>🔢 <strong>Spanish combines words for numbers below 30!</strong><br>
+          Example: <em>veinticuatro</em> = twenty-four.
+        </li>
+        <li>🧮 <strong>From 31 onwards, use “y” (and).</strong><br>
+          Example: <em>treinta y cinco</em> = thirty-five.
+        </li>
+        <li>🎯 <strong>Accent marks matter!</strong><br>
+          <em>veintidós</em> (22), <em>veintitrés</em> (23), <em>dieciséis</em> (16).
+        </li>
+        <li>🎧 <strong>Practice listening!</strong><br>
+          Spanish numbers are pronounced quickly, so repeat them out loud to improve.
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Bottom Navigation Buttons -->
+<div class="bottom-nav-buttons">
+  <a href="../spanish/index.html" class="btn nav-btn">← Back to Course List</a>
+  <a href="lesson2.html" class="btn nav-btn">Attempt Quiz →</a>
+</div>
+
+<style>
+  .bottom-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem auto 2rem;
+    padding: 1rem 2rem;
+    max-width: 900px;
+    flex-wrap: wrap;
+  }
+
+  .bottom-nav-buttons .nav-btn {
+    flex: 1;
+    text-align: center;
+    background-color: #004d7a;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+  }
+
+  .bottom-nav-buttons .nav-btn:hover {
+    background-color: #ff9500;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .bottom-nav-buttons {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  }
+</style>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 LingoQuest. All rights reserved.</p>
+</footer>
+
+<script src="../js/script.js"></script>
+<script>
+  document.querySelectorAll('.speaker-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const word = btn.getAttribute('data-word');
+      if (word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'es-ES';
+        speechSynthesis.speak(utterance);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
