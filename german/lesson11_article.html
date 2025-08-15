@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 11 – Grammar Basics 2 | LingoQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">LingoQuest</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../courses.html">Courses</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../gallery.html">Gallery</a></li>
+        <li><a href="../career.html">Career</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Lesson 11: 📚 Grammar Basics – 2</h1>
+    <p>Learn about articles, plurals, negation, and imperative forms to strengthen your German sentence skills.</p>
+  </section>
+
+  <!-- Lesson Content -->
+<section class="lesson-article">
+  <div class="content-wrapper">
+
+    <!-- Articles and Plural Forms -->
+    <div class="learn-box">
+      <h2 class="section-heading">📖 Articles and Plural Forms</h2>
+      <p>German has <strong>definite</strong> (the) and <strong>indefinite</strong> (a/an) articles. They change depending on the gender (masculine, feminine, neuter) and case.</p>
+      <ul>
+        <li>Masculine: <strong>der</strong> (the), <strong>ein</strong> (a)<br>
+            Example: <strong>der Mann</strong> <button class="speaker-btn" data-word="der Mann">🔊</button> (the man)</li>
+        <li>Feminine: <strong>die</strong> (the), <strong>eine</strong> (a)<br>
+            Example: <strong>die Frau</strong> <button class="speaker-btn" data-word="die Frau">🔊</button> (the woman)</li>
+        <li>Neuter: <strong>das</strong> (the), <strong>ein</strong> (a)<br>
+            Example: <strong>das Kind</strong> <button class="speaker-btn" data-word="das Kind">🔊</button> (the child)</li>
+      </ul>
+      <p><strong>Plural:</strong> All plural nouns take <strong>die</strong> as the definite article.<br>
+      Example: <strong>die Kinder</strong> <button class="speaker-btn" data-word="die Kinder">🔊</button> (the children)</p>
+      <p>🧩 Plural formation varies:<br>
+      - Add <strong>-e</strong>: der Tisch → die Tische<br>
+      - Add <strong>-er</strong>: das Kind → die Kinder<br>
+      - Add <strong>-n/-en</strong>: die Frau → die Frauen</p>
+    </div>
+
+    <!-- Negation -->
+    <div class="learn-box">
+      <h2 class="section-heading">🚫 Negation (kein, nicht)</h2>
+      <p>German uses <strong>kein</strong> and <strong>nicht</strong> to say “no” or “not”.</p>
+      <ul>
+        <li><strong>kein</strong> negates nouns without an article or with an indefinite article:<br>
+            Example: <strong>Ich habe kein Auto.</strong> <button class="speaker-btn" data-word="Ich habe kein Auto">🔊</button> (I don’t have a car)</li>
+        <li><strong>nicht</strong> negates verbs, adjectives, or specific parts of a sentence:<br>
+            Example: <strong>Ich spiele nicht.</strong> <button class="speaker-btn" data-word="Ich spiele nicht">🔊</button> (I’m not playing)</li>
+      </ul>
+      <p>🧩 Position rule:<br>
+      - <strong>nicht</strong> usually comes at the end of a clause unless it modifies a specific word.</p>
+    </div>
+
+    <!-- Imperative Forms -->
+    <div class="learn-box">
+      <h2 class="section-heading">📢 Imperative Forms</h2>
+      <p>The imperative is used for giving commands, instructions, or suggestions.</p>
+      <ul>
+        <li><strong>du-form</strong> (informal, singular): Remove the -st ending from the verb.<br>
+            Example: <strong>Geh!</strong> <button class="speaker-btn" data-word="Geh">🔊</button> (Go!)</li>
+        <li><strong>ihr-form</strong> (informal, plural): Use the regular ihr form.<br>
+            Example: <strong>Geht!</strong> <button class="speaker-btn" data-word="Geht">🔊</button> (Go! – to several people)</li>
+        <li><strong>Sie-form</strong> (formal): Invert the verb and pronoun.<br>
+            Example: <strong>Gehen Sie!</strong> <button class="speaker-btn" data-word="Gehen Sie">🔊</button> (Go! – polite)</li>
+      </ul>
+      <p>💡 To soften a command, add <strong>bitte</strong> (please) at the start or end:<br>
+      <strong>Bitte kommen Sie.</strong> <button class="speaker-btn" data-word="Bitte kommen Sie">🔊</button> (Please come.)</p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Bottom Navigation Buttons -->
+  <div class="bottom-nav-buttons">
+    <a href="../german/index.html" class="btn nav-btn">← Back to Course List</a>
+    <a href="lesson11.html" class="btn nav-btn">Attempt Quiz →</a>
+  </div>
+
+  <!-- Bottom Nav Button Styles -->
+  <style>
+    .bottom-nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 3rem auto 2rem;
+      padding: 1rem 2rem;
+      max-width: 900px;
+      flex-wrap: wrap;
+    }
+    .bottom-nav-buttons .nav-btn {
+      flex: 1;
+      text-align: center;
+      background-color: #004d7a;
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: 0.3s ease;
+    }
+    .bottom-nav-buttons .nav-btn:hover {
+      background-color: #ff9500;
+      transform: translateY(-2px);
+    }
+    @media (max-width: 600px) {
+      .bottom-nav-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 LingoQuest. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/script.js"></script>
+  <script>
+  // Speaker button click
+  document.querySelectorAll('.speaker-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const word = btn.getAttribute('data-word');
+      if (word) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'de-DE';
+        speechSynthesis.speak(utterance);
+      }
+    });
+  });
+  </script>
+
+</body>
+</html>
