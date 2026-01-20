@@ -1,7 +1,7 @@
 function submitForm(event) {
   event.preventDefault(); // Stop default behavior
   
-  window.location.href = "https://sanaryan175.github.io/LingoQuest/thankyou.html";
+  window.location.href = "https://lingoquest-0eaj.onrender.com/thankyou.html";
 // Instant redirect
 }
 function toggleMenu() {
